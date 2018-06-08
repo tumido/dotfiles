@@ -1,0 +1,9 @@
+.directory
+__pycache__
+*.pyc
+*.tgz
+*.tar.gz
+*.zip
+*.tags*
+SoftLayer.md
+env

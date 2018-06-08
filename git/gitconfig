@@ -1,0 +1,19 @@
+[user]
+    email = tcoufal@redhat.com
+    name = Tomas Coufal
+[push]
+    default = current
+[core]
+    excludesfile = /home/tcoufal/.gitignore
+[pull]
+    rebase = true
+[alias]
+    lg = "log --graph --full-history --all --pretty=format:'%>>(10)%C(#ffaa00)%h%Creset%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+    unpushed = log --branches --not --remotes --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    c = commit
+    s = status
+    co = checkout
+    b = branch
+    p = push
+[credential]
+    helper = cache
