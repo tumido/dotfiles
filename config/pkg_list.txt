@@ -1,0 +1,42 @@
+# Power management
+lm_sensor
+tlp
+powertop
+
+# Terminal
+zsh
+zsh-completions
+zsh-syntax-highlighting
+zsh-theme-powerlevel9k
+
+# Plasma
+kdeconnect-git
+
+# Software
+atom
+steam
+
+# Web & IM
+chromium
+firefox
+rambox-bin
+konversation
+
+# Graphics
+gravit-designer-bin
+krita
+gimp
+inkscape
+
+# Multimedia
+vlc
+spotify 
+spotifywm-git
+
+# Utilities
+ark
+zip
+unzip
+git
+git-review
+git-standup-git
