@@ -1,0 +1,10 @@
+{{ $email := promptString "email" -}}
+{{ $keyid := "11744BE7B97A9C31" -}}
+
+data:
+  email: "{{ $email }}"
+  name: "Tomas Coufal"
+  keyid: "{{ $keyid }}"
+
+gpg:
+  recipient: "{{ $keyid }}"

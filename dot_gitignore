@@ -1,0 +1,11 @@
+.directory
+__pycache__
+*.pyc
+*.tgz
+*.tar.gz
+*.zip
+*.tags*
+*.o
+.env
+.tags
+.vscode

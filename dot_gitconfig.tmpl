@@ -1,0 +1,233 @@
+[user]
+  email = {{ .email }}
+  name = {{ .name }}
+  signingkey = {{ .keyid }}
+
+[push]
+  default = current
+  rebase = true
+  followTags = true
+
+[core]
+  excludesfile = ~/.gitignore
+
+[pull]
+  rebase = true
+
+[credential]
+  helper = cache
+
+[color]
+  interactive = true
+  branch = true
+  status = true
+
+[alias]
+  root = rev-parse --show-toplevel
+
+  out = log --branches --not --remotes
+  in = pull --dry-run
+
+  co = checkout
+  coc = checkout .
+  cob = checkout -b
+  cobf = "!f() { git brd $1; git cob $1; }; f"
+  col = checkout HEAD~1
+  com = checkout master
+
+  c = commit
+  ca = commit -a
+  cm = commit --amend --no-edit
+  cam = commit --amend -a --no-edit
+  cma = cam
+
+  cl = clean
+  cldf = clean -df
+
+  res = reset
+  resa = reset HEAD
+  resh = "!f() { git stash && git reset --hard $@; }; f"
+  undo = reset HEAD^1
+  unstage = resa
+
+  tags = tag -l
+
+  d = diff
+  ds = diff --staged
+
+  s = status --short --branch
+
+  sh = show --color
+  shw = show --color --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+  shf = show --color -C --stat
+
+  f = fetch
+  fu = fetch upstream
+  fum =  fu master
+  fa = fetch --all
+  fo = fetch origin
+
+  p = push
+  pf = push -f
+
+  b = branch
+
+  aa = add --all -v
+  aaf = add --all -f -v
+  ap = add -p -v
+  a = add -u -v
+
+  lg = "log --graph --full-history --all --pretty=format:'%C(#ffaa00)%h%C(r) —— %C(magenta)%G? %C(bold blue)%an%C(r): %s %C(green)%ar%C(r) %C(red)%d%C(r)' --abbrev-commit --date=relative"
+  cleanup-origin = "!git branch -r --merged | awk '/origin/ && !/master/' | sed 's/origin\\///' | xargs -r -n 1 git push --delete origin"
+  cleanup-local = "!git branch --merged | grep -v 'master' | xargs -r -n 1 git branch -d"
+  update = "!git fum && git com && git rb upstream/master && git p"
+
+  # cotc = !git sttc | xargs git checkout
+  # como = !git stmo | xargs git checkout
+
+  # d = diff --color
+  # dw = diff --color --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+  # du = !git d `git upstream`
+  # ds = !git d --staged
+  # dsf = !git d --staged --stat
+  # dsw = !git d --staged --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+  # dsf = !git d --staged -C --stat
+  # df = !git d -C --stat
+  # dc = "!f() { HASH=$1; shift 1; git diff --cc $HASH $HASH^1 $HASH^2 $@; }; f"
+
+  # lp = log -m --color -p
+  # lf = log -m --color -C --stat
+  # lgu = !git lg `git upstream`
+  # lg2 = !source ~/.githelpers && pretty_git_log
+  # lgp = !git lg -p
+  # lgpw = !git lg -p --color-words='[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+'
+  # lgf = !git lg -C --stat
+  # l = log -m --simplify-merges --color --pretty=format:'%Cred%h%Creset %s %Cgreen(%cr) %Cblue%an <%ae>%Creset' --abbrev-commit --date=relative
+  # lc = "!f() { git log $* | grep '^commit ' | cut -f 2 -d ' '; }; f"
+
+  # lgu = !git lg --no-merges `git upstream`
+  # lgup = !git lg --no-merges -p `git upstream`
+
+  # ps = push
+  # psu = push -u
+  # psn = "!f() { git ps $1 `git brc`; }; f"
+  # psnf = "!f() { git psf $1 `git brc`; }; f"
+  # psfun = "!f() { git psu -f $1 `git brc`; }; f"
+  # psun = "!f() { git psu $1 `git brc`; }; f"
+  # pso = push origin
+  # psoun = !git psu origin `git brc`
+  # psf = push -f
+  # psuf = push -uf
+  # pssm = push --recurse-submodules=on-demand
+  # psremoveallbranches = "!f() { git push $1 `git brar $1 | grep -v master | xargs -I {} echo :{}`; }; f"
+
+  resolve-unmerged = !git add `git unmerged`
+  add-untracked = !git add `git untracked`
+  as = !git diff -w --no-color | git apply --cached
+  rs = !(git resa && git as && git co . && git resa) &>/dev/null
+
+  rmf = rm -rf
+
+  unmerged = !git ls-files --unmerged | cut -f2 | uniq
+  untracked = ls-files --other --exclude-standard
+  staged = ls-files --staged
+  modified = ls-files --modified
+  deleted = ls-files --deleted
+  gitignored = ls-files -o -i --exclude-standard
+  unpushed = "log --branches --not --remotes --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+  sig = !git ls-files -v | grep "^[[:lower:]]"
+
+  ig = update-index --assume-unchanged
+  uig = update-index --no-assume-unchanged
+  ignore = update-index --assume-unchanged
+  ignored = !git sig
+
+  gitignore-untracked = !git gitignore `git untracked`
+  ig-untracked = !git ignore `git untracked`
+  gitignore = !cd `git root` && touch .gitignore
+
+  head = !git l -1
+  h = !git head
+  r = !git l -20
+  ra = !git r --all
+
+  sh = stash
+  shp = stash pop
+  shl = stash list
+  shd = stash drop
+  shc = stash clear
+  sha = stash apply
+
+  chp = cherry-pick
+  chpc = cherry-pick --continue
+  chpq = cherry-pick --quit
+  chpa = cherry-pick --abort
+
+  rv = revert
+  rvc = revert --continue
+  rva = revert --abort
+
+  am3 = am -3
+  amr = am --resolved
+  amc = am --continue
+  ama = am --abort
+  ams = am --skip
+
+  fm = format-patch
+
+  rb = rebase
+  rbad = rebase --committer-date-is-author-date
+  rbi = rebase -i
+  rbtc = !git theirs `git unmerged` || git resolve-unmerged && (git rbc || git rbs)
+  rboc = !git ours `git unmerged` || git reset `git unmerged` && git a . && (git rbc || git rbs)
+  rbc = rebase --continue
+  rba = rebase --abort
+  rbs = rebase --skip
+  rbm = rb master
+
+  squash = !"f() { NL=$1; GIT_EDITOR=\"sed -i '2,$NL s/pick/squash/;/# This is the 2nd commit message:/,$ {d}'\"; git rebase -i HEAD~$NL; }; f"
+  sq = !git squash $1
+  sqpsf = !git squash $1 && git psf
+
+  bs = bisect
+  bsr = bisect reset
+  bsb = bisect bad
+  bsg = bisect good
+
+  current = rev-parse --abbrev-ref HEAD
+  br = branch
+  brc = rev-parse --abbrev-ref HEAD
+  bra = branch -a
+  brrecent = !git for-each-ref --sort=-committerdate refs/heads/
+  brar = "!f() { git bra | grep remotes/$1/ | cut -f 3 -d '/'; }; f"
+  brd = branch -D
+
+  rem = remote
+  rema = remote add
+  remr = remote rm
+  remv = remote -v
+  remotes = remote -v
+
+  bl = blame
+
+  gcp = gc --prune=now
+  gca = gc --aggressive
+  gcap = gc --aggressive --prune=now
+
+    # git change-commits GIT_COMMITTER_NAME "old name" "new name"
+  change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+    # from https://help.github.com/articles/remove-sensitive-data
+  remove-file = "!f() { git filter-branch -f --index-filter \"git rm --cached --ignore-unmatch $1\" --prune-empty --tag-name-filter cat -- --all; }; f"
+
+  rf = reflog
+  rfe = reflog expire --expire=now --all
+
+  pr = prune
+  prm = !git rfe && git gcp
+
+  fsize = git ls-tree -r -t -l --full-name HEAD | sort -rn -k 4 | less
+
+  findemptydirs = !"find . -type d -empty ! -path ./tmp/\\*"
+  deleteemptydirs = !"find . -type d -empty ! -path ./tmp/\\* -exec rmdir {} \\;"
+[commit]
+	gpgsign = true
