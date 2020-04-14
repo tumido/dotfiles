@@ -1,0 +1,301 @@
+# VARIABLES
+zsh_folder="$HOME/.zsh"
+
+# HISTORY
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt share_history appendhistory inc_append_history hist_ignore_space hist_ignore_all_dups hist_reduce_blanks extended_history
+HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear";
+HISTCONTROL='ignoreboth';
+
+# OPTIONS
+setopt autocd extendedglob notify prompt_subst complete_in_word always_to_end auto_pushd long_list_jobs complete_aliases
+unsetopt beep nomatch
+bindkey -e
+
+# COMPLETION STYLE
+
+# Use menu select
+zstyle ':completion:*' menu select
+# General style
+zstyle ':completion:*' verbose true
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' list-dirs-first true
+zstyle ':completion:*:corrections' format '%U%F{green}%d (errors: %e)%f%u'
+zstyle ':completion:*:warnings' format '%F{202}%BSorry, no matches for: %F{214}%d%b'
+# Show group names
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
+zstyle ':completion:*:descriptions' format "%F{31}%d:%f"
+# Coloring
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==33=}:${(s.:.)LS_COLORS}:ma=33;4")'
+zstyle ':completion:*:options:descriptions' list-colors '=*=33'
+zstyle ':completion:*:*:*:*:hosts' list-colors '=*=31'
+zstyle ':completion:*:*:*:*:users' list-colors '=*=32'
+# LS_COLORS
+eval $(dircolors -b $zsh_folder/LS_COLORS)
+# Git don't show remote branches
+zstyle ':completion::complete:git-checkout:argument-rest:headrefs' command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
+
+# PROMT THEME
+CASE_SENSITIVE=true
+SPACESHIP_CHAR_COLOR_SUCCESS=208
+SPACESHIP_CHAR_SYMBOL=" "
+SPACESHIP_DIR_COLOR=blue
+SPACESHIP_DIR_TRUNC_PREFIX="…/"
+SPACESHIP_DIR_LOCK_SYMBOL=" "
+SPACESHIP_JOBS_COLOR="green"
+SPACESHIP_EXIT_CODE_SHOW=true
+SPACESHIP_CONDA_SYMBOL=""
+#SPACESHIP_PYENV_SYMBOL=" "
+SPACESHIP_GIT_SYMBOL=" "
+#SPACESHIP_GIT_STATUS_PREFIX=" "
+#SPACESHIP_GIT_STATUS_SUFFIX=""
+SPACESHIP_GIT_STATUS_PREFIX=""
+SPACESHIP_GIT_STATUS_SUFFIX=""
+SPACESHIP_GIT_STATUS_UNTRACKED=" "
+SPACESHIP_GIT_STATUS_ADDED=" "
+SPACESHIP_GIT_STATUS_MODIFIED=" "
+SPACESHIP_GIT_STATUS_RENAMED=" "
+SPACESHIP_GIT_STATUS_DELETED=" "
+SPACESHIP_GIT_STATUS_STASHED=" ﮫ"
+SPACESHIP_GIT_STATUS_UNMERGED=" "
+SPACESHIP_GIT_STATUS_AHEAD=" "
+SPACESHIP_GIT_STATUS_BEHIND=" "
+SPACESHIP_GIT_STATUS_DIVERGED=" "
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  host          # Hostname section
+  dir           # Current directory section
+  git           # Git section (git_branch + git_status)
+  exec_time     # Execution time
+  jobs          # Background jobs indicator
+  char          # Prompt character
+)
+SPACESHIP_RPROMPT_ORDER=(
+  package       # Package version
+  node          # Node.js section
+  ruby          # Ruby section
+  docker        # Docker section
+  venv          # virtualenv section
+  conda         # Conda section
+  pyenv         # Pyenv section
+  exit_code     # Exit code section
+)
+
+# Set up Ruby
+# eval "$(command rbenv init -)"
+# export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+
+# Set NPM global dir
+export PATH="$HOME/.npm-global/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+export NVM_SOURCE="/usr/share/nvm"
+[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
+
+# Set up Python
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$HOME/.local/bin:$PATH"
+_pipenv() {
+  eval $(env COMMANDLINE="${words[1,$CURRENT]}" _PIPENV_COMPLETE=complete-zsh  pipenv)
+}
+_pip_completion() {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+eval "$(pyenv init -)"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Set up Go
+export GOPATH="$HOME/.go"
+export PATH="${GOPATH//://bin:}/bin:$PATH"
+
+# Set editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# Set sudo prompt
+export SUDO_PROMPT="💬🔑 "
+
+# Bundles
+source <(antibody init)
+ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
+DISABLE_AUTO_UPDATE=true
+DISABLE_UPDATE_PROMPT=true
+ZSH_COMPDUMP=$HOME/.zcompdump
+antibody bundle < $zsh_folder/bundle.txt
+
+# Init additional completions
+fpath+="$zsh_folder/zfunc"
+compdef _pipenv pipenv
+compctl -K _pip_completion pip
+
+
+# COMPLETION
+# Dkms
+#source /usr/share/bash-completion/completions/dkms
+
+# Openshift completion
+source "$zsh_folder/zfunc/_oc"
+compctl -K __start_oc oc
+
+# Git aliased completion
+compdef g='git'
+
+complete -C '~/.local/bin/aws_completer' aws
+
+# KEYBINDINGS
+bindkey "^[[3;5~"          kill-word
+bindkey "\b"               backward-kill-word
+bindkey "$terminfo[kich1]" overwrite-mode
+bindkey '^[[Z'             autosuggest-accept
+
+# ALIASES
+# The Fuck
+eval $(thefuck --alias)
+# Show memory waitong to write to disk
+alias dirty="watch grep -e Dirty: -e Writeback: /proc/meminfo"
+
+alias be="bundle exec"
+alias ber="be rake"
+alias bers="be rails s"
+alias berc="be rails c"
+alias psql_root="psql -U root -d postgres"
+alias watch="watch -d -c"
+alias i="lximage-qt"
+alias mplayer=mpv
+alias g=git
+alias ocu="oc config use-context"
+alias ocl="oc config set-cluster"
+alias ocr="oc config set-credentials"
+alias ocg="oc get"
+alias ocd="oc describe"
+alias ocs="oc status"
+alias t="PIPENV_DONT_LOAD_ENV=1 pipenv run pytest --pylama ."
+alias dotenv="set -a; source ./.env; set +a;"
+
+# FUNCTIONS
+
+# Merge PDFs
+function pdfmerge {
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=$@
+}
+
+# Restart KDE Plasma
+function plasma-restart {
+    echo "Restarting plasma..."
+    killall plasmashell
+    kstart5 plasmashell &> /dev/null
+    echo "Restarting krunner..."
+    killall krunner
+    kstart5 krunner &> /dev/null
+    echo "Done"
+}
+
+# Rsync backup
+function backup {
+    params=""
+    if [ "$1" == "-r" ]; then
+        params="--remove-source-files"
+        shift
+    fi
+
+    rsync -avh --stats --progress --inplace $params $@
+}
+
+# Charge Thinkpad to full
+function charge {
+    if [ "$1" == "-f" ]; then
+        sudo tlp fullcharge BAT0
+        sudo tlp fullcharge BAT1
+    else
+        sudo tlp setcharge BAT0
+        sudo tlp setcharge BAT1
+    fi
+}
+
+# Create gif from video
+function gif {
+    palette="/tmp/gif-palette-$RANDOM.png"
+    ffmpeg -v "warning" -i "$1" -vf "fps=10,palettegen=stats_mode=full" -y "$palette"
+    ffmpeg -v "warning" -i "$1" -i "$palette" -lavfi "fps=10 [x]; [x][1:v] paletteuse=dither=sierra2_4a" -y "${1%.*}.gif"
+}
+
+# oh-my-zsh like cd
+# alias ...="cd ../.."
+# alias 1="cd -"
+# alias 2="cd -2"
+
+# Export payroll
+function export_payroll {
+    year="2019"
+    pushd ~/Vaults/Payroll
+    mv ~/Downloads/*_$year\_$1_970-CZE.ZIP Archives/
+    pass=$(cat payroll.txt | tr -d '\n')
+    unzip -P $pass -j Archives/*_$year\_$1_970-CZE.ZIP -d Extracted/  *_$year\_$1_970-CZE-CZE.PDF
+    popd
+}
+
+# Wrap up different monitoring tools
+function monitor {
+    case "$1" in
+        "cpu") s-tui;;
+        "gpu") sudo intel_gpu_top;;
+        "ps") htop;;
+        "all") glances;;
+        "dirty") dirty;;
+        "mem") free -tm;;
+        *) echo "Not a valid resource";;
+    esac;
+}
+
+function is-group-installed {
+    for i in `yay -Sg $1 | cut -f2 -d ' '`; do
+        printf %-50s "$i";
+        x="$(yay -Qs \"^$i$\")";
+        [ $? -eq 1 ] || echo -n "not ";
+        echo "installed";
+    done
+}
+
+function toggle_trackpoint {
+    current_status=`xinput list-props "TPPS/2 IBM TrackPoint" | awk '/Device Enabled/{print $4}'`
+    xinput set-prop "TPPS/2 IBM TrackPoint" "Device Enabled" `[ $current_status == "1" ] && echo 0 || echo 1`
+}
+
+function src {
+	autoload -U compinit zrecompile
+	compinit -i -d $ZSH_COMPDUMP
+
+	for f in ~/.zshrc $ZSH_COMPDUMP; do
+		zrecompile -p $f && command rm -f $f.zwc.old
+	done
+
+	# Use $SHELL if available; remove leading dash if login shell
+	[[ -n "$SHELL" ]] && exec ${SHELL#-} || exec zsh
+}
+
+function magnet {
+    trackers=`echo "$3" | paste -s -d "~" | sed 's/~~/\&tr=/p'`
+    echo "magnet:?xt=urn:btih:$1&dn=$2&tr=$trackers"
+}
