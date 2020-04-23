@@ -186,11 +186,13 @@ alias i="lximage-qt"
 alias mplayer=mpv
 alias g=git
 alias ocu="oc config use-context"
-alias ocl="oc config set-cluster"
+alias occl="oc config set-cluster"
 alias ocr="oc config set-credentials"
 alias ocg="oc get"
 alias ocd="oc describe"
 alias ocs="oc status"
+alias ocdel="oc delete"
+alias ocl="oc logs"
 alias t="PIPENV_DONT_LOAD_ENV=1 pipenv run pytest --pylama ."
 alias dotenv="set -a; source ./.env; set +a;"
 
@@ -248,7 +250,7 @@ function gif {
 
 # Export payroll
 function export_payroll {
-    year="2019"
+    year="2020"
     pushd ~/Vaults/Payroll
     mv ~/Downloads/*_$year\_$1_970-CZE.ZIP Archives/
     pass=$(cat payroll.txt | tr -d '\n')

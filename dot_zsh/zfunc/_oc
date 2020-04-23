@@ -1,5 +1,5 @@
 #compdef kubectl
-
+__kubectl_debug() {}
 
 __kubectl_bash_source() {
 	alias shopt=':'
