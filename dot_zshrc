@@ -175,6 +175,7 @@ bindkey '^[[Z'             autosuggest-accept
 eval $(thefuck --alias)
 # Show memory waitong to write to disk
 alias dirty="watch grep -e Dirty: -e Writeback: /proc/meminfo"
+alias cat="pygmentize -g"
 
 alias be="bundle exec"
 alias ber="be rake"
