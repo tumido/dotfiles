@@ -10,6 +10,7 @@
 
 [core]
   excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
 
 [pull]
   rebase = true
@@ -21,6 +22,12 @@
   interactive = true
   branch = true
   status = true
+
+[commit]
+  gpgsign = true
+
+[diff "nbdiff"]
+  command = git-nbdiffdriver webdiff
 
 [alias]
   root = rev-parse --show-toplevel
@@ -229,5 +236,3 @@
 
   findemptydirs = !"find . -type d -empty ! -path ./tmp/\\*"
   deleteemptydirs = !"find . -type d -empty ! -path ./tmp/\\* -exec rmdir {} \\;"
-[commit]
-	gpgsign = true
