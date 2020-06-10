@@ -175,7 +175,7 @@ bindkey '^[[Z'             autosuggest-accept
 eval $(thefuck --alias)
 # Show memory waitong to write to disk
 alias dirty="watch grep -e Dirty: -e Writeback: /proc/meminfo"
-alias cat="pygmentize -g"
+alias cat="pygmentize -g -O style=monokai"
 
 alias be="bundle exec"
 alias ber="be rake"
@@ -299,6 +299,6 @@ function src {
 }
 
 function magnet {
-    trackers=`echo "$3" | paste -s -d "~" | sed 's/~~/\&tr=/p'`
+    trackers=`echo "$3" | paste -s -d "~" | sed 's/~~/\&tr=/g'`
     echo "magnet:?xt=urn:btih:$1&dn=$2&tr=$trackers"
 }
