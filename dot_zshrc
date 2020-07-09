@@ -254,7 +254,7 @@ function export_payroll {
     year="2020"
     pushd ~/Vaults/Payroll
     mv ~/Downloads/*_$year\_$1_970-CZE.ZIP Archives/
-    pass=$(cat payroll.txt | tr -d '\n')
+    pass=$(/bin/cat payroll.txt | tr -d '\n')
     unzip -P $pass -j Archives/*_$year\_$1_970-CZE.ZIP -d Extracted/  *_$year\_$1_970-CZE-CZE.PDF
     popd
 }
