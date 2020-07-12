@@ -155,10 +155,6 @@ compctl -K _pip_completion pip
 # Dkms
 #source /usr/share/bash-completion/completions/dkms
 
-# Openshift completion
-source "$zsh_folder/zfunc/_oc"
-compctl -K __start_oc oc
-
 # Git aliased completion
 compdef g='git'
 
