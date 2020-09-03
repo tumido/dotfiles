@@ -219,7 +219,7 @@ function backup {
         shift
     fi
 
-    rsync -avh --stats --progress --inplace $params $@
+    rsync -avh --stats --progress --partial $params $@
 }
 
 # Charge Thinkpad to full
