@@ -1,0 +1,139 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Full system upgrade
+      become: true
+      pacman:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Install packages from official repos
+      become: true
+      pacman:
+        state: present
+        name:
+          # Power management & performance
+          - cpupower
+          - htop
+          - i2c-tools
+          - i7z
+          - lm_sensors
+          - nmon
+          - powerdevil
+          - powertop
+          - smartmontools
+          - thermald
+          - tlp
+          - upower
+          # Terminal
+          - zsh
+          - zsh-completions
+          - zsh-syntax-highlighting
+          # Plasma
+          - breeze-gtk
+          - kde-gtk-config
+          - ksshaskpass
+          - noto-fonts-emoji
+          - noto-fonts-extra
+          - pam-krb5
+          - plasma-browser-integration
+          - plasma-desktop
+          - plasma-nm
+          - plasma-pa
+          - sddm
+          - sddm-kcm
+          # Connectivity
+          - bluedevil
+          - firewalld
+          - gnu-netcat
+          - networkmanager-openvpn
+          - networkmanager-qt
+          - nmap
+          - rsync
+          - wget
+          - whois
+          # Sound
+          - pulseaudio
+          - pulseaudio-bluetooth
+          - pulseaudio-equalizer
+          # Editors
+          - gvim
+          - kate
+          - visual-studio-code-bin
+          # Web & IM
+          - chromium
+          - firefox
+          - hamsket-nightly-bin
+          # Graphics
+          - gimp
+          - inkscape
+          - krita
+          - flameshot
+          # Multimedia & Games
+          - spotify
+          - steam
+          - vlc
+            # Develop, build, compile or deploy
+          - base-devel
+          - ctags
+          - nodejs
+          - python-pip
+          - python-virtualenv
+          # Utilities
+          - android-tools
+          - cryptsetup
+          - diffutils
+          - downgrade
+          - findutils
+          - gawk
+          - git
+          - git-review
+          - git-standup-git
+          - haveged
+          - hunspell
+          - hunspell-cs
+          - ksystemlog
+          - man-db
+          - man-pages
+          - mlocate
+          - p7zip
+          - pkgconf
+          - pkgfile
+          - systemd-boot-pacman-hook
+          - tar
+          - thefuck
+          - unzip
+          - which
+          - xdelta3
+          - yubikey-manager
+          - zip
+          - gnupg
+          - openssh
+          # Apps
+          - ark
+          - dolphin
+          - dolphin-plugins
+          - gparted
+          - kompare
+          - krename
+          - ktorrent
+          - okular
+          - qdirstat
+          - simplescreenrecorder
+          - yubikey-personalization-gui
+          - chezmoi
+
+    - name: Install packages from AUR
+      become: true
+      command:
+        argv:
+          - yay
+          - -S
+          - yay-bin
+          - papirus-folders-git
+          - papirus-icon-theme-git
+          - papirus-plasma-theme
+          - zsh-theme-powerlevel10k
+          - hardcode-fixer-git
+          - hardcode-tray-git
+          - antibody
