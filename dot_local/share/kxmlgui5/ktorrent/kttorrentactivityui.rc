@@ -1,0 +1,99 @@
+<!DOCTYPE kpartgui>
+<kpartgui version="7" name="torrentactivity">
+ <MenuBar>
+  <Menu noMerge="1" name="view">
+   <Action group="view_menu_top" name="show_group_view"/>
+  </Menu>
+  <Menu noMerge="1" name="Torrents">
+   <text translationDomain="ktorrent">Torrents</text>
+   <Action name="start"/>
+   <Action name="pause"/>
+   <Action name="stop"/>
+   <Action name="remove"/>
+   <Action name="view_remove_torrent_and_data"/>
+   <Separator/>
+   <Action name="start_all"/>
+   <Action name="stop_all"/>
+   <Separator/>
+   <Action name="check_data"/>
+   <Action name="filter_torrent"/>
+   <Separator/>
+   <Action name="queue_suspend"/>
+   <Separator/>
+   <Action name="speed_limits"/>
+  </Menu>
+ </MenuBar>
+ <Menu noMerge="1" name="GroupsMenu">
+  <text translationDomain="ktorrent">Groups</text>
+  <Action name="open_in_new_tab"/>
+  <Separator/>
+  <Action name="new_group"/>
+  <Action name="edit_group_name"/>
+  <Action name="remove_group"/>
+  <Separator/>
+  <Action name="edit_group_policy"/>
+  <Separator/>
+  <Merge/>
+ </Menu>
+ <Menu noMerge="1" name="ViewMenu">
+  <text translationDomain="ktorrent">View</text>
+  <Action name="start"/>
+  <Action name="force_start"/>
+  <Action name="pause"/>
+  <Action name="stop"/>
+  <Action name="remove"/>
+  <Action name="view_remove_torrent_and_data"/>
+  <Separator/>
+  <Action name="view_torrent_properties"/>
+  <Action name="view_announce"/>
+  <Action name="check_data"/>
+  <Action name="view_move_data"/>
+  <Action name="view_preview"/>
+  <Separator/>
+  <Menu noMerge="1" name="AdvancedMenu">
+   <text translationDomain="ktorrent">Advanced</text>
+   <Action name="view_rename_torrent"/>
+   <Action name="view_export_torrent"/>
+   <Action name="view_copy_url"/>
+   <Action name="view_add_peers"/>
+   <Action name="speed_limits"/>
+   <Separator/>
+   <Menu icon="folder-open" noMerge="1" name="OpenDirMenu">
+    <text translationDomain="ktorrent">Open Directory</text>
+    <Action name="view_open_data_dir"/>
+    <Action name="view_open_tmp_dir"/>
+   </Menu>
+   <Action name="view_remove_from_group"/>
+   <Menu icon="application-x-bittorrent" noMerge="1" name="GroupsSubMenu">
+    <text translationDomain="ktorrent">Add to Group</text>
+    <ActionList name="view_groups_list"/>
+    <Separator/>
+    <Action name="view_add_to_new_group"/>
+   </Menu>
+  </Menu>
+  <Separator/>
+  <Menu noMerge="1" name="ColumnsMenu">
+   <text translationDomain="ktorrent">Configure Columns</text>
+   <title translationDomain="ktorrent">Columns</title>
+   <ActionList name="view_columns_list"/>
+  </Menu>
+  <Merge/>
+ </Menu>
+ <ToolBar noMerge="1" name="TorrentsToolBar">
+  <text translationDomain="ktorrent">Torrents</text>
+  <Action name="show_group_view"/>
+  <Action name="filter_torrent"/>
+  <Separator name="separator_0"/>
+  <Action name="start"/>
+  <Action name="pause"/>
+  <Action name="stop"/>
+  <Action name="remove"/>
+  <Action name="start_all"/>
+  <Action name="stop_all"/>
+  <Separator name="separator_1"/>
+  <Action name="queue_suspend"/>
+ </ToolBar>
+ <ActionProperties scheme="Default">
+  <Action icon="filter-symbolic" name="filter_torrent"/>
+ </ActionProperties>
+</kpartgui>
