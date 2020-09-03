@@ -1,0 +1,35 @@
+[Desktop Entry]
+DefaultProfile=Zsh.profile
+
+[Favorite Profiles]
+Favorites=Zsh.profile,Recording.profile
+
+[FileDialogSize]
+Height 1080=818
+Width 1920=1635
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/x,file:$HOME/x
+Recent URLs[$e]=file:$HOME/Downloads/
+detailViewIconSize=0
+
+[KonsoleWindow]
+AllowMenuAccelerators=true
+SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABmMAAAMyAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+
+[Notification Messages]
+ShowPasteUnprintableWarning=false
+
+[SaveHistory Settings]
+Recent URLs[$e]=file:$HOME
+
+[TabBar]
+CloseTabOnMiddleMouseButton=true
+TabBarPosition=Top
+TabBarVisibility=ShowTabBarWhenNeeded
