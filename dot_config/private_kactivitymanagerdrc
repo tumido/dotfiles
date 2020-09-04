@@ -1,0 +1,19 @@
+[Plugins]
+org.kde.ActivityManager.ResourceScoringEnabled=true
+org.kde.ActivityManager.VirtualDesktopSwitchEnabled=true
+
+[activities]
+ac174555-d3cc-4b73-80bd-5ea57f617c83=Red Hat
+ed1f66ee-a4d1-4ed1-94d4-0a513fad3655=Spotify
+
+[activities-descriptions]
+ac174555-d3cc-4b73-80bd-5ea57f617c83=Work related stuff goes here
+
+[activities-icons]
+ac174555-d3cc-4b73-80bd-5ea57f617c83=redhat
+ed1f66ee-a4d1-4ed1-94d4-0a513fad3655=com.spotify.Client
+
+[main]
+currentActivity=ac174555-d3cc-4b73-80bd-5ea57f617c83
+runningActivities=ac174555-d3cc-4b73-80bd-5ea57f617c83
+stoppedActivities=
