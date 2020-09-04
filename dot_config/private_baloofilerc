@@ -1,0 +1,11 @@
+[Basic Settings]
+Indexing-Enabled=true
+
+[General]
+dbVersion=2
+exclude filters=CMakeFiles,node_modules,CMakeTmpQmake,*.fasta,cmake_install.cmake,.moc,CTestTestfile.cmake,*.rcore,*.qrc,__pycache__,*.vdi,*.a,*.db,vbox.log,.xsession-errors*,*.gcode,.git,*.elc,*.part,.pch,*.csproj,.uic,.yarn-cache,*.vhd,*.po,config.status,*.fastq,*.vbox*,*.omf,*.moc,po,*.loT,confdefs.h,libtool,CMakeCache.txt,qrc_*.cpp,*.class,autom4te,*.sql,*.o,*.faa,*.init,*.gbff,litmain.sh,*.gmo,Makefile.am,*.nvram,*.orig,nbproject,ui_*.h,core-dumps,*.vhdx,lost+found,*.vm*,CVS,*.so,confstat,.npm,*.sql.gz,*.lo,*.ini,moc_*.cpp,*.pc,.bzr,*.vmdk,*.jsc,.yarn,*~,*.map,*.fna,*.gb,*.qcow2,*.fq,conftest,*.pyc,.obj,*.swap,*.rej,*.qmlc,CMakeTmp,node_packages,_darcs,.hg,*.aux,*.la,lzo,*.tmp,.histfile.*,*.pyo,*.m4,*.img,.svn
+exclude filters version=5
+exclude folders[$e]=$HOME/.torrent/,$HOME/Programming/,$HOME/Workspace/Torrent/
+first run=false
+folders[$e]=$HOME/
+only basic indexing=false

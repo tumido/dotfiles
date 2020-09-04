@@ -1,0 +1,87 @@
+Height 1080=636
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAADZAAACfPwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAACfAAAAFoBAAADAAAAAQAAAXgAAAJe/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAB4AAAJeAAAACgEAAAMAAAADAAAFJwAAALX8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAsAAAFJwAAAAoBAAADAAAETQAAAnwAAAAEAAAABAAAAAgAAAAI/AAAAAIAAAAAAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAAAA==
+Width 1920=1363
+
+[AdditionalInfoDialog]
+Height 1080=294
+Width 1920=300
+
+[CompactMode]
+FontWeight=50
+
+[Desktop Entry]
+DefaultProfile=Zsh.profile
+
+[DetailsMode]
+FontWeight=50
+IconSize=22
+
+[DownloadDialog Settings]
+Height 1080=494
+Width 1920=700
+
+[Favorite Profiles]
+Favorites=
+
+[General]
+AutoExpandFolders=true
+BrowseThroughArchives=true
+ConfirmClosingMultipleTabs=false
+GlobalViewProps=false
+RememberOpenedTabs=false
+ShowCopyMoveMenu=true
+ShowFullPath=true
+ShowToolTips=true
+Version=200
+ViewPropsTimestamp=2018,4,25,13,31,23
+
+[IconsMode]
+FontWeight=50
+IconSize=112
+MaximumTextLines=1
+PreviewSize=176
+
+[KPropertiesDialog]
+Height 1080=518
+Height 1440=542
+Width 1920=501
+Width 3440=471
+
+[MainWindow]
+Height 1080=636
+Height 1440=636
+Height 1920=636
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAADaAAACfPwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAACfAAAAF0BAAADAAAAAQAAAXgAAAJe/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAB4AAAJeAAAACgEAAAMAAAADAAAFMwAAALX8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAgAAAFMwAAAAoBAAADAAAEWAAAAnwAAAAEAAAABAAAAAgAAAAI/AAAAAIAAAAAAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAAAA==
+ToolBarsMovable=Disabled
+Width 1080=1078
+Width 1920=1363
+Width 3440=1363
+
+[MainWindow][Toolbar mainToolBar]
+IconSize=16
+ToolButtonStyle=IconOnly
+
+[Open-with settings]
+CompletionMode=5
+History=kate,chr,vlc,lximage-qt,krename,gravit-designer,/usr/bin/vlc --started-from-file %U,ark,kate -b %U,okular %U %i -caption %c,okular,inkscape %F,gimp-2.8 %U,kate -b -n %U,ark %U
+
+[PreviewSettings]
+Plugins=directorythumbnail,imagethumbnail,jpegthumbnail,svgthumbnail,ffmpegthumbs
+
+[SettingsDialog]
+Height 1080=450
+Height 1440=450
+Width 1920=572
+Width 3440=572
+
+[Toolbar mainToolBar]
+IconSize=16
+ToolButtonStyle=IconOnly
+
+[ViewPropertiesDialog]
+Height 1080=454
+Height 1440=704
+Width 1920=367
+Width 3440=375

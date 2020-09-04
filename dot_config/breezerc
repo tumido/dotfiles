@@ -1,0 +1,20 @@
+[Common]
+OutlineCloseButton=false
+ShadowSize=12
+ShadowStrength=128
+
+[Style]
+MenuItemDrawStrongFocus=false
+MnemonicsMode=MN_NEVER
+ScrollBarAddLineButtons=0
+ScrollBarSubLineButtons=0
+SidePanelDrawFrame=true
+ToolBarDrawItemSeparator=false
+
+[Windeco Exception 0]
+BorderSize=2
+Enabled=true
+ExceptionPattern=.*
+ExceptionType=0
+HideTitleBar=true
+Mask=16
