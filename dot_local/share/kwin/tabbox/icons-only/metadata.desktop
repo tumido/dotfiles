@@ -1,0 +1,18 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Icons Only
+Comment=Large icons Window switcher - just narrower and without application name
+Icon=preferences-system-windows-switcher-icons
+Type=Service
+
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+
+X-KDE-PluginInfo-Author=Tomas Coufal
+X-KDE-PluginInfo-Email=coufal.tom@gmail.com
+X-KDE-PluginInfo-Name=icons-only
+X-KDE-PluginInfo-Version=1.0
+
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL
+X-KDE-ServiceTypes=KWin/WindowSwitcher

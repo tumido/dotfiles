@@ -1,0 +1,25 @@
+[/home/tcoufal/.local/share/plasma-vault/Backup.enc]
+activities=
+backend=cryfs
+lastError=Unknown device (code: 1)
+lastStatus=2
+mountPoint=/home/tcoufal/Vaults/Backup
+name=Backup
+offlineOnly=false
+
+[/home/tcoufal/.local/share/plasma-vault/Payroll.enc]
+activities=
+backend=cryfs
+lastError=Unknown device (code: 1)
+lastStatus=2
+mountPoint=/home/tcoufal/Vaults/Payroll
+name=Payroll
+offlineOnly=false
+
+[EncryptedDevices]
+/home/tcoufal/.local/share/plasma-vault/Backup.enc=true
+/home/tcoufal/.local/share/plasma-vault/Payroll.enc=true
+
+[UI-notice]
+SkipNotice-cryfs-message=false
+SkipNotice-encfs-message=false

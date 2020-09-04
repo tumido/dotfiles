@@ -1,0 +1,5 @@
+[general]
+autoUpdate=true
+autoUpdateInterval=3
+filterURL=http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=gz
+useLevel1=true

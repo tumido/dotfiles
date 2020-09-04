@@ -1,0 +1,61 @@
+[Audio Preview Settings]
+Autoplay=true
+
+[Basic Settings]
+Indexing-Enabled=true
+
+[ConfigDialog]
+Height 1080=746
+Width 1920=1334
+
+[DownloadDialog Settings]
+Height 1080=746
+Width 1920=1334
+
+[FileDialogSize]
+Height 1080=746
+Height 1440=746
+Width 1920=1334
+Width 3440=1334
+
+[General]
+exclude folders[$e]=/run/media/tcoufal/LittleOne/,$HOME/Workspace/Torrent/,$HOME/.torrent/
+folders[$e]=$HOME/
+
+[HTML Settings]
+AutomaticDetectionLanguage=1
+
+[KFileDialog Settings]
+Recent Files[$e]=vladstudio_airlines2_2880x1800_signed.jpg,file:$HOME/flameshot-shortcuts-kde,file:$HOME/Pictures/Evening Light  by designuchiha 3840x2160.jpg,file:$HOME/Pictures/Avatars/community.png,file:$HOME/Pictures/vladstudio_airlines2_5120x2880_signed.jpg
+Recent URLs[$e]=file:$HOME/Downloads/
+detailViewIconSize=0
+
+[KPropertiesDialog]
+Height 1080=746
+Width 1920=1334
+
+[MainWindow]
+Height 1080=746
+Height 1440=746
+Height 1920=746
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABTYAAALqAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1080=1076
+Width 1920=1334
+Width 3440=1334
+Width 4920=1334
+
+[Notification Messages]
+FormatSettingsChanged=false
+
+[Open-with settings]
+CompletionMode=1
+History=
+
+[PlasmaRunnerManager]
+LaunchCounts=
+
+[classic_mode]
+autoExpandOneLevel=false
+viewLayout=438,877
