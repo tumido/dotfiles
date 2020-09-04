@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../AI-CoE/sre/aicoe-cd"
+		},
+		{
+			"path": "../AI-CoE/sre/aicoe-sre"
+		},
+		{
+			"path": "../AI-CoE/sre/aicoe-ci"
+		}
+	],
+	"settings": {}
+}

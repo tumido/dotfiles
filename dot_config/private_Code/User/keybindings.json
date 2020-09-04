@@ -1,0 +1,74 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.commentLine",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+;",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+ctrl+s",
+        "command": "editor.action.showSnippets"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "breadcrumbs.toggle"
+    },
+    {
+        "key": "ctrl+k up",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+k down",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "-editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+space",
+        "command": "editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+space",
+        "command": "-editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+g g",
+        "command": "-workbench.view.scm",
+        "when": "gitlens:enabled && config.gitlens.keymap == 'chorded'"
+    },
+    {
+        "key": "ctrl+k g",
+        "command": "workbench.view.extension.github-pull-requests"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+alt+-",
+        "command": "-workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "editor.action.formatDocument"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "-editor.action.formatDocument"
+    },
+]

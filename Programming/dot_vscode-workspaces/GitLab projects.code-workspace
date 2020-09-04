@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "../AI-CoE/gitlab/dh-argo-workflows"
+		},
+		{
+			"path": "../AI-CoE/gitlab/dh-docs"
+		},
+		{
+			"path": "../AI-CoE/gitlab/dev-ocp-provisioner"
+		},
+		{
+			"path": "../AI-CoE/gitlab/dh-internal-odh-install"
+		},
+		{
+			"path": "../AI-CoE/gitlab/dh-argo"
+		},
+		{
+			"path": "../AI-CoE/gitlab/dh-hive"
+		}
+	],
+	"settings": {
+		"cSpell.enabled": false
+		// "yaml.schemas": {
+		// 	"http://json.schemastore.org/ansible-stable-2.9": ["/*"],
+		// },
+		// "yaml.schemaStore.enable": false,
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../AI-CoE/aiops/sync-pipelines"
+		},
+		{
+			"path": "../AI-CoE/gitlab/dh-argo-workflows"
+		}
+	],
+	"settings": {
+	}
+}

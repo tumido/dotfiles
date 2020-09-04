@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../AI-CoE/aiops/openshift-sme-topic-modeling"
+		},
+		{
+			"path": "../AI-CoE/aiops/project-template"
+		},
+		{
+			"path": "../AI-CoE/s2i-custom-notebook"
+		},
+		{
+			"path": "../AI-CoE/thoth-station/jupyternb-build-pipeline"
+		}
+	],
+	"settings": {
+		"python.testing.pytestEnabled": false
+	}
+}

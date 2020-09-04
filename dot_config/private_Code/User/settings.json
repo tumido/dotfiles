@@ -1,0 +1,258 @@
+{
+  "atomKeymap.promptV3Features": true,
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": true,
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": [
+      "jsx",
+      "js"
+    ]
+  },
+  "editor.wordWrap": "on",
+  "files.exclude": {
+    //     "**/.bundle": true,
+    //     "**/.git*": true,
+    //     "**/.python-version": true,
+    "**/.directory": true,
+    "**/.vscode": true
+  },
+  "git.autofetch": true,
+  "materialTheme.accent": "Yellow",
+  "ruby.codeCompletion": "rcodetools",
+  "ruby.intellisense": false,
+  "ruby.lint": {
+    "rubocop": true,
+    "ruby": {
+      "unicode": true
+    },
+  },
+  "search.followSymlinks": false,
+  "solargraph.commandPath": "/home/tcoufal/.gem/ruby/2.5.0/bin/solargraph",
+  "telemetry.enableTelemetry": false,
+  "workbench.colorCustomizations": {
+    "activityBarBadge.background": "#FFA000",
+    "list.activeSelectionForeground": "#FFA000",
+    "list.inactiveSelectionForeground": "#FFA000",
+    "list.highlightForeground": "#FFA000",
+    "scrollbarSlider.activeBackground": "#FFA00050",
+    "editorSuggestWidget.highlightForeground": "#FFA000",
+    "textLink.foreground": "#FFA000",
+    "progressBar.background": "#FFA000",
+    "pickerGroup.foreground": "#FFA000",
+    "tab.activeBorder": "#FFA000",
+    "notificationLink.foreground": "#FFA000",
+    "editorWidget.resizeBorder": "#FFA000",
+    "editorWidget.border": "#FFA000",
+    "settings.modifiedItemForeground": "#FFA000",
+    "panelTitle.activeBorder": "#FFA000",
+    "settings.modifiedItemIndicator": "#FFA000",
+    "settings.headerForeground": "#FFA000",
+    "breadcrumb.activeSelectionForeground": "#FFA000",
+    "menu.selectionForeground": "#FFA000",
+    "menubar.selectionForeground": "#FFA000"
+  },
+  "workbench.iconTheme": "file-icons-colourless",
+  "breadcrumbs.enabled": true,
+  "html.format.wrapAttributes": "aligned-multiple",
+  "gitlens.blame.toggleMode": "window",
+  "vscodeWorkspaceSwitcher.paths": [
+    "/home/tcoufal/Programming/.vscode-workspaces/"
+  ],
+  "emojisense.languages": {
+    "markdown": true,
+    "html": true,
+    "plaintext": {
+      "markupCompletionsEnabled": false,
+      "emojiDecoratorsEnabled": false
+    },
+    "javascript": true,
+    "javascriptreact": true,
+    "git-commit": true
+  },
+  "latex-workshop.view.pdf.viewer": "external",
+  "zenMode.centerLayout": false,
+  "write-good.languages": [
+    "*"
+  ],
+  "gitlens.currentLine.scrollable": false,
+  "cSpell.userWords": [
+    "glorot",
+    "keras"
+  ],
+  "workbench.activityBar.visible": false,
+  "search.quickOpen.includeSymbols": true,
+  "search.showLineNumbers": true,
+  "terminal.external.linuxExec": "zsh",
+  "terminal.integrated.cursorStyle": "line",
+  "python.autoComplete.addBrackets": true,
+  "gitlens.blame.format": "${author|14} ${message|30?} ${agoOrDate|14-}",
+  "gitlens.blame.dateFormat": "",
+  "gitlens.blame.avatars": false,
+  "bracketPairColorizer.showHorizontalScopeLine": false,
+  "bracketPairColorizer.showBracketsInGutter": true,
+  "bracketPairColorizer.showVerticalScopeLine": false,
+  "workbench.sideBar.location": "left",
+  "workbench.colorTheme": "Material Theme Darker High Contrast",
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "cSpell.language": "en,cs,en-US,en-GB",
+  "cSpell.showCommandsInEditorContextMenu": false,
+  "gitlens.menus": {
+    "editor": {
+      "blame": false,
+      "clipboard": false,
+      "compare": false,
+      "details": false,
+      "history": false,
+      "remote": false
+    },
+    "editorGroup": {
+      "blame": false,
+      "compare": false
+    },
+    "editorTab": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "explorer": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "scmGroup": {
+      "compare": true,
+      "openClose": true,
+      "stash": true,
+      "stashInline": true
+    },
+    "scmItem": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true,
+      "stash": true
+    }
+  },
+  "window.zoomLevel": 0,
+  "latex-workshop.latex.autoBuild.run": "never",
+  "gitlens.keymap": "none",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "fixme",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "fix-me",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    }
+  ],
+  "editor.cursorSurroundingLines": 5,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.jediEnabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "python.linting.pylintUseMinimalCheckers": false,
+  "files.insertFinalNewline": true,
+  "vscodeWorkspaceSwitcher.showInExplorer": false,
+  "workbench.editor.tabCloseButton": "off",
+  "editor.minimap.scale": 3,
+  "editor.fontFamily": "'Fira Code'",
+  "autoDocstring.includeExtendedSummary": true,
+  "git.confirmSync": false,
+  "workbench.tree.indent": 12,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "python.formatting.provider": "black",
+  "git.enableCommitSigning": true,
+  "autoDocstring.docstringFormat": "google",
+  "python.venvPath": "~/.cache/pypoetry/virtualenvs",
+  "eslint.format.enable": true,
+  "[jinja-yaml]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[ruby]": {
+    "editor.tabSize": 2,
+  },
+  "editor.renderWhitespace": "none",
+  "go.useLanguageServer": true,
+  "window.menuBarVisibility": "hidden",
+  "customizeUI.titleBar": "inline",
+  "python.testing.pytestEnabled": true,
+  "gitlens.advanced.messages": {
+    "suppressLineUncommittedWarning": true
+  },
+  "cSpell.enableFiletypes": [
+    "jupyter"
+  ],
+  "python.dataScience.askForKernelRestart": false,
+  "explorer.confirmDelete": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vs-kubernetes": {
+    "checkForMinikubeUpgrade": false,
+  },
+  "python.languageServer": "Microsoft",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "search.useGlobalIgnoreFiles": true,
+  "editor.multiCursorModifier": "ctrlCmd"
+}
