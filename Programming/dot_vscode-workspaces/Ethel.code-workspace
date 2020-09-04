@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "/home/tcoufal/Programming/Ethel"
+		}
+	],
+	"settings": {
+		"python.linting.mypyEnabled": true,
+		"python.pythonPath": "/home/tcoufal/.cache/pypoetry/virtualenvs/ethel-jDxFT7dM-py3.8",
+	}
+}
