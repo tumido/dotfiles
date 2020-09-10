@@ -2,7 +2,7 @@
 activities=
 backend=cryfs
 lastError=Unknown device (code: 1)
-lastStatus=2
+lastStatus=254
 mountPoint=/home/tcoufal/Vaults/Backup
 name=Backup
 offlineOnly=false
@@ -11,7 +11,7 @@ offlineOnly=false
 activities=
 backend=cryfs
 lastError=Unknown device (code: 1)
-lastStatus=2
+lastStatus=254
 mountPoint=/home/tcoufal/Vaults/Payroll
 name=Payroll
 offlineOnly=false

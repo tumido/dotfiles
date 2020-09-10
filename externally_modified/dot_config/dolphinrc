@@ -33,6 +33,7 @@ RememberOpenedTabs=false
 ShowCopyMoveMenu=true
 ShowFullPath=true
 ShowToolTips=true
+UseTabForSwitchingSplitView=true
 Version=200
 ViewPropsTimestamp=2018,4,25,13,31,23
 
@@ -40,13 +41,13 @@ ViewPropsTimestamp=2018,4,25,13,31,23
 FontWeight=50
 IconSize=112
 MaximumTextLines=1
-PreviewSize=176
+PreviewSize=144
 
 [KPropertiesDialog]
 Height 1080=518
 Height 1440=542
 Width 1920=501
-Width 3440=471
+Width 3440=507
 
 [MainWindow]
 Height 1080=636
@@ -68,7 +69,7 @@ CompletionMode=5
 History=kate,chr,vlc,lximage-qt,krename,gravit-designer,/usr/bin/vlc --started-from-file %U,ark,kate -b %U,okular %U %i -caption %c,okular,inkscape %F,gimp-2.8 %U,kate -b -n %U,ark %U
 
 [PreviewSettings]
-Plugins=directorythumbnail,imagethumbnail,jpegthumbnail,svgthumbnail,ffmpegthumbs
+Plugins=directorythumbnail,imagethumbnail,jpegthumbnail,svgthumbnail
 
 [SettingsDialog]
 Height 1080=450
@@ -82,6 +83,6 @@ ToolButtonStyle=IconOnly
 
 [ViewPropertiesDialog]
 Height 1080=454
-Height 1440=704
+Height 1440=454
 Width 1920=367
 Width 3440=375
