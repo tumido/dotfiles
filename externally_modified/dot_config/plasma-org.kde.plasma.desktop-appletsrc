@@ -150,27 +150,6 @@ PreloadWeight=0
 FillMode=2
 Image=file:///home/tcoufal/Pictures/vladstudio_airlines2_5120x2880_signed.jpg
 
-[Containments][28]
-ItemGeometriesHorizontal=
-activityId=ac174555-d3cc-4b73-80bd-5ea57f617c83
-formfactor=0
-immutability=1
-lastScreen=1
-location=0
-plugin=org.kde.desktopcontainment
-wallpaperplugin=org.kde.image
-
-[Containments][28][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][28][Configuration]
-PreloadWeight=0
-
-[Containments][28][Wallpaper][org.kde.image][General]
-FillMode=2
-Image=file:///home/tcoufal/Pictures/Evening Light  by designuchiha 3840x2160.jpg
-
 [Containments][37]
 ItemGeometriesHorizontal=
 activityId=ac174555-d3cc-4b73-80bd-5ea57f617c83
@@ -419,11 +398,10 @@ PreloadWeight=100
 
 [Containments][7][Applets][20][Configuration][ConfigDialog]
 DialogHeight=735
-DialogWidth=720
+DialogWidth=1577
 
 [Containments][7][Applets][20][Configuration][General]
 maximumVolume=125
-raiseMaximumVolume=true
 
 [Containments][7][Applets][21]
 immutability=1
@@ -437,7 +415,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][7][Applets][22][Configuration]
-PreloadWeight=100
+PreloadWeight=97
 
 [Containments][7][Applets][24]
 immutability=1
@@ -455,7 +433,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][7][Applets][25][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][7][Applets][25][Configuration][ConfigDialog]
 DialogHeight=540
@@ -574,6 +552,18 @@ PreloadWeight=0
 extraItems=org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.printmanager,org.kde.redshiftControl,org.kde.plasma.keyboardindicator,org.kde.plasma.vault,org.kde.ktp-contactlist,org.kde.plasma.nightcolorcontrol,org.kde.kscreen,firewall-applet,touchpad
 hiddenItems=Albert,org.kde.plasma.printmanager,org.kde.plasma.vault,rambox,firewall-applet,org.kde.kscreen,org.kde.plasma.weather,org.kde.weatherWidget
 knownItems=org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.plasma.vault,org.kde.ktp-contactlist,org.kde.plasma.nightcolorcontrol
+
+[Containments][73][Wallpaper][org.kde.image][General]
+Image=/home/tcoufal/Pictures/firewatch_mods_by_aaronolive_da8ovo1/Firewatch Mod Day.png
+
+[Containments][76]
+activityId=ac174555-d3cc-4b73-80bd-5ea57f617c83
+formfactor=0
+immutability=1
+lastScreen=1
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
 
 [General]
 immutability=1

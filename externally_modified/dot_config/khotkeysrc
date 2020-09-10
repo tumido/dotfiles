@@ -959,7 +959,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_4_3Actions0]
-Arguments=100
+Arguments=1
 Call=setBrightness
 RemoteApp=org.freedesktop.PowerManagement
 RemoteObj=/org/kde/Solid/PowerManagement/Actions/BrightnessControl
@@ -988,7 +988,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_4_4Actions0]
-Arguments=6818
+Arguments=24242
 Call=setBrightness
 RemoteApp=org.freedesktop.PowerManagement
 RemoteObj=/org/kde/Solid/PowerManagement/Actions/BrightnessControl
