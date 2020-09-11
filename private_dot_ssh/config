@@ -1,0 +1,58 @@
+Host *
+    IdentitiesOnly yes
+
+Host turris
+    User root
+    HostName 192.168.0.1
+    PreferredAuthentications publickey
+
+Host router cap1 cap2
+    User admin
+    HostName %h.lan
+    IdentityFile ~/.ssh/mikrotik_rsa
+    PreferredAuthentications publickey
+
+Host merlin eva
+    User xcoufa09
+    HostName  %h.fit.vutbr.cz
+    IdentityFile ~/.ssh/school_ed25519
+    PreferredAuthentications publickey
+
+Host jenkins
+    User root
+    HostName content-test-jenkins.rhev-ci-vms.eng.rdu2.redhat.com
+
+Host 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16
+    User root
+    HostName cloud-qe-16-vm-%h.idmqe.lab.eng.bos.redhat.com
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+Host code.engineering.redhat.com
+    User tcoufal
+    IdentityFile ~/.ssh/gerrit_rsa
+    PreferredAuthentications publickey
+
+Host moth
+    User pi
+    Hostname %h.local
+    IdentityFile ~/.ssh/raspberry-pi_ed25519
+    PreferredAuthentications publickey
+
+Host gist.github.com github.com
+    IdentityFile ~/.ssh/github_rsa
+    PreferredAuthentications publickey
+
+Host gitlab.sat.engineering.redhat.com gitlab.cee.redhat.com
+    IdentityFile ~/.ssh/gerrit_rsa
+    PreferredAuthentications publickey
+
+Host gitlab.com
+    Hostname gitlab.com
+    IdentityFile ~/.ssh/gitlab_ed25519
+    PreferredAuthentications publickey
+
+Host zas
+    User tomc
+    Hostname www.zas.cz
+    PreferredAuthentications publickey
