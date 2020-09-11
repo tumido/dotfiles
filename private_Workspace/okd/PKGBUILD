@@ -1,0 +1,22 @@
+# Maintainer: Tumi
+
+pkgname=okd-client-bin
+pkgver=4.5.0_0.okd_2020_09_04_180756
+pkgrel=1
+pkgdesc="The client tools for Openshift OKD: The Origin Community Distribution of Kubernetes"
+arch=(x86_64)
+url="https://github.com/openshift/okd"
+license=('Apache')
+
+source=("https://github.com/openshift/okd/releases/download/${pkgver//_/-}/openshift-client-linux-${pkgver//_/-}.tar.gz")
+
+sha256sums=('b70e7bbee507802a414e0c7ca50f9edaf500c078370e31a3e2e38aa702c34947')
+
+conflicts=('origin-client' 'origin-client-bin')
+
+package() {
+    install -Dm755 $srcdir/oc $pkgdir/usr/bin/oc
+
+    "$pkgdir/usr/bin/oc" completion bash | install -Dm644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/oc"
+    ("$pkgdir/usr/bin/oc" completion zsh | sed 's/kubectl/oc/g';  echo '__start_oc "$@"') | install -Dm644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_oc"
+}
