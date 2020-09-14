@@ -53,72 +53,6 @@ echo '[core]
 	fetch = +refs/heads/*:refs/remotes/upstream/*' > /home/tcoufal/Programming/AI-CoE/operate-first/continuous-deployment/.git/config
 git --git-dir=/home/tcoufal/Programming/AI-CoE/operate-first/continuous-deployment/.git fetch --all
 
-# Repo: /home/tcoufal/Programming/AI-CoE/thoth-station/jupyternb-build-pipeline
-git init /home/tcoufal/Programming/AI-CoE/thoth-station/jupyternb-build-pipeline
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "origin"]
-	url = git@github.com:tumido/jupyternb-build-pipeline.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
-[remote "upstream"]
-	url = git@github.com:thoth-station/jupyternb-build-pipeline.git
-	fetch = +refs/heads/*:refs/remotes/upstream/*' > /home/tcoufal/Programming/AI-CoE/thoth-station/jupyternb-build-pipeline/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/thoth-station/jupyternb-build-pipeline/.git fetch --all
-
-# Repo: /home/tcoufal/Programming/AI-CoE/thoth-station/micropipenv
-git init /home/tcoufal/Programming/AI-CoE/thoth-station/micropipenv
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "origin"]
-	url = git@github.com:tumido/micropipenv.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master' > /home/tcoufal/Programming/AI-CoE/thoth-station/micropipenv/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/thoth-station/micropipenv/.git fetch --all
-
-# Repo: /home/tcoufal/Programming/AI-CoE/odh-ml-pipelines
-git init /home/tcoufal/Programming/AI-CoE/odh-ml-pipelines
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "upstream"]
-	url = git@github.com:anishasthana/odh-ml-pipelines.git
-	fetch = +refs/heads/*:refs/remotes/upstream/*
-[branch "master"]
-	remote = upstream
-	merge = refs/heads/master
-[remote "origin"]
-	url = git@github.com:tumido/odh-ml-pipelines.git
-	fetch = +refs/heads/*:refs/remotes/origin/*' > /home/tcoufal/Programming/AI-CoE/odh-ml-pipelines/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/odh-ml-pipelines/.git fetch --all
-
-# Repo: /home/tcoufal/Programming/AI-CoE/s2i-custom-notebook
-git init /home/tcoufal/Programming/AI-CoE/s2i-custom-notebook
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "origin"]
-	url = git@github.com:tumido/s2i-custom-notebook.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master' > /home/tcoufal/Programming/AI-CoE/s2i-custom-notebook/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/s2i-custom-notebook/.git fetch --all
-
 # Repo: /home/tcoufal/Programming/AI-CoE/aiops/openshift-sme-topic-modeling
 git init /home/tcoufal/Programming/AI-CoE/aiops/openshift-sme-topic-modeling
 echo '[core]
@@ -216,24 +150,6 @@ echo '[core]
 	fetch = +refs/heads/*:refs/remotes/upstream/*' > /home/tcoufal/Programming/AI-CoE/sre/aicoe-cd/.git/config
 git --git-dir=/home/tcoufal/Programming/AI-CoE/sre/aicoe-cd/.git fetch --all
 
-# Repo: /home/tcoufal/Programming/AI-CoE/sre/aicoe-sre
-git init /home/tcoufal/Programming/AI-CoE/sre/aicoe-sre
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "origin"]
-	url = git@github.com:tumido/aicoe-sre.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
-[remote "upstream"]
-	url = git@github.com:AICoE/aicoe-sre.git
-	fetch = +refs/heads/*:refs/remotes/upstream/*' > /home/tcoufal/Programming/AI-CoE/sre/aicoe-sre/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/sre/aicoe-sre/.git fetch --all
-
 # Repo: /home/tcoufal/Programming/AI-CoE/sre/aicoe-ci
 git init /home/tcoufal/Programming/AI-CoE/sre/aicoe-ci
 echo '[core]
@@ -273,40 +189,6 @@ echo '[core]
 	merge = refs/heads/production' > /home/tcoufal/Programming/AI-CoE/sre/odh-manifests/.git/config
 git --git-dir=/home/tcoufal/Programming/AI-CoE/sre/odh-manifests/.git fetch --all
 
-# Repo: /home/tcoufal/Programming/AI-CoE/gitlab/dh-argo-workflows
-git init /home/tcoufal/Programming/AI-CoE/gitlab/dh-argo-workflows
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "upstream"]
-	url = git@gitlab.cee.redhat.com:data-hub/dh-argo-workflows.git
-	fetch = +refs/heads/*:refs/remotes/upstream/*
-	fetch = +refs/merge-requests/*/head:refs/remotes/upstream/mr/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
-[remote "origin"]
-	url = git@gitlab.cee.redhat.com:tcoufal/dh-argo-workflows.git
-	fetch = +refs/heads/*:refs/remotes/origin/*' > /home/tcoufal/Programming/AI-CoE/gitlab/dh-argo-workflows/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/gitlab/dh-argo-workflows/.git fetch --all
-
-# Repo: /home/tcoufal/Programming/AI-CoE/gitlab/dh-internal-odh-install
-git init /home/tcoufal/Programming/AI-CoE/gitlab/dh-internal-odh-install
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "origin"]
-	url = git@gitlab.cee.redhat.com:data-hub/dh-internal-odh-install.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master' > /home/tcoufal/Programming/AI-CoE/gitlab/dh-internal-odh-install/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/gitlab/dh-internal-odh-install/.git fetch --all
-
 # Repo: /home/tcoufal/Programming/AI-CoE/gitlab/dh-hive
 git init /home/tcoufal/Programming/AI-CoE/gitlab/dh-hive
 echo '[core]
@@ -321,57 +203,6 @@ echo '[core]
 	url = git@gitlab.cee.redhat.com:tcoufal/dh-hive.git
 	fetch = +refs/heads/*:refs/remotes/origin/*' > /home/tcoufal/Programming/AI-CoE/gitlab/dh-hive/.git/config
 git --git-dir=/home/tcoufal/Programming/AI-CoE/gitlab/dh-hive/.git fetch --all
-
-# Repo: /home/tcoufal/Programming/AI-CoE/gitlab/reading-sos-reports
-git init /home/tcoufal/Programming/AI-CoE/gitlab/reading-sos-reports
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "origin"]
-	url = git@gitlab.cee.redhat.com:avsrivas/reading-sos-reports.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master' > /home/tcoufal/Programming/AI-CoE/gitlab/reading-sos-reports/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/gitlab/reading-sos-reports/.git fetch --all
-
-# Repo: /home/tcoufal/Programming/AI-CoE/gitlab/dh-argo
-git init /home/tcoufal/Programming/AI-CoE/gitlab/dh-argo
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "upstream"]
-	url = git@gitlab.cee.redhat.com:data-hub/dh-argo.git
-	fetch = +refs/heads/*:refs/remotes/upstream/*
-[branch "master"]
-	remote = upstream
-	merge = refs/heads/master
-[remote "origin"]
-	url = git@gitlab.cee.redhat.com:tcoufal/dh-argo.git
-	fetch = +refs/heads/*:refs/remotes/origin/*' > /home/tcoufal/Programming/AI-CoE/gitlab/dh-argo/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/gitlab/dh-argo/.git fetch --all
-
-# Repo: /home/tcoufal/Programming/AI-CoE/gitlab/dev-ocp-provisioner
-git init /home/tcoufal/Programming/AI-CoE/gitlab/dev-ocp-provisioner
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "upstream"]
-	url = git@gitlab.cee.redhat.com:data-hub/dev-ocp-provisioner.git
-	fetch = +refs/heads/*:refs/remotes/upstream/*
-[branch "master"]
-	remote = upstream
-	merge = refs/heads/master
-[remote "origin"]
-	url = git@gitlab.cee.redhat.com:tcoufal/dev-ocp-provisioner.git
-	fetch = +refs/heads/*:refs/remotes/origin/*' > /home/tcoufal/Programming/AI-CoE/gitlab/dev-ocp-provisioner/.git/config
-git --git-dir=/home/tcoufal/Programming/AI-CoE/gitlab/dev-ocp-provisioner/.git fetch --all
 
 # Repo: /home/tcoufal/Programming/AI-CoE/yaml_filter
 git init /home/tcoufal/Programming/AI-CoE/yaml_filter
@@ -416,6 +247,9 @@ echo '[core]
 	filemode = true
 	bare = false
 	logallrefupdates = true
+[remote "origin"]
+        url = git@github.com:tumido/kwin-tabbox-icons-only.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
 [user]
 	email = coufal.tom@gmail.com' > /home/tcoufal/Programming/kwin-tabbox-icons-only/.git/config
 git --git-dir=/home/tcoufal/Programming/kwin-tabbox-icons-only/.git fetch --all
@@ -453,21 +287,6 @@ echo '[core]
 	fetch = +refs/heads/*:refs/remotes/ethel-old/*' > /home/tcoufal/Programming/Ethel/.git/config
 git --git-dir=/home/tcoufal/Programming/Ethel/.git fetch --all
 
-# Repo: /home/tcoufal/Programming/kwin-script-ultrawide-windows
-git init /home/tcoufal/Programming/kwin-script-ultrawide-windows
-echo '[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-[remote "origin"]
-	url = git@github.com:LucaMoschella/UltrawideWindows.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master' > /home/tcoufal/Programming/kwin-script-ultrawide-windows/.git/config
-git --git-dir=/home/tcoufal/Programming/kwin-script-ultrawide-windows/.git fetch --all
-
 # Repo: /home/tcoufal/Programming/linux.pictures
 git init /home/tcoufal/Programming/linux.pictures
 echo '[core]
@@ -500,19 +319,4 @@ echo '[core]
 	remote = origin
 	merge = refs/heads/master' > /home/tcoufal/Programming/imgur-album-downloader/.git/config
 git --git-dir=/home/tcoufal/Programming/imgur-album-downloader/.git fetch --all
-
-# Repo: /home/tcoufal/Programming/map-the-ldap
-git init /home/tcoufal/Programming/map-the-ldap
-echo '[core]
-        repositoryformatversion = 0
-        filemode = true
-        bare = false
-        logallrefupdates = true
-[remote "origin"]
-        url = git@github.com:tumido/map-the-ldap.git
-        fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "master"]
-        remote = origin
-        merge = refs/heads/master' > /home/tcoufal/Programming/map-the-ldap/.git/config
-git --git-dir=/home/tcoufal/Programming/map-the-ldap/.git fetch --all
 
