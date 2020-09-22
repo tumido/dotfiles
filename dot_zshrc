@@ -186,10 +186,12 @@ alias ocu="oc config use-context"
 alias occl="oc config set-cluster"
 alias ocr="oc config set-credentials"
 alias ocg="oc get"
+alias ocgy="oc get -o yaml"
 alias ocd="oc describe"
 alias ocs="oc status"
 alias ocdel="oc delete"
 alias ocl="oc logs"
+alias occo="chromium `oc whoami --show-console`"
 alias t="PIPENV_DONT_LOAD_ENV=1 pipenv run pytest --pylama ."
 alias dotenv="set -a; source ./.env; set +a;"
 
@@ -297,4 +299,14 @@ function src {
 function magnet {
     trackers=`echo "$3" | paste -s -d "~" | sed 's/~~/\&tr=/g'`
     echo "magnet:?xt=urn:btih:$1&dn=$2&tr=$trackers"
+}
+
+
+function oct {
+    context=`oc config current-context`
+    ldap_creds=`kwalletcli -f openshift -e "$context"`
+    base_url=`oc config view | ymlx "this.clusters.filter(c => c.name == \"$context\").map(c => c.cluster.server)[0]" | tr -d "'"`
+    oauth_url=`curl -sk "$base_url/.well-known/oauth-authorization-server" | fx .authorization_endpoint`
+    token=`curl -u "$ldap_creds" -ik "$oauth_url?client_id=openshift-challenging-client&response_type=token" | grep -oP "access_token=\K[^&]*"`
+    ocr $context --token=$token
 }

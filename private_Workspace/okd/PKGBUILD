@@ -1,7 +1,7 @@
 # Maintainer: Tumi
 
 pkgname=okd-client-bin
-pkgver=4.5.0_0.okd_2020_09_04_180756
+pkgver=4.5.0_0.okd_2020_09_18_202631
 pkgrel=1
 pkgdesc="The client tools for Openshift OKD: The Origin Community Distribution of Kubernetes"
 arch=(x86_64)
@@ -10,7 +10,7 @@ license=('Apache')
 
 source=("https://github.com/openshift/okd/releases/download/${pkgver//_/-}/openshift-client-linux-${pkgver//_/-}.tar.gz")
 
-sha256sums=('b70e7bbee507802a414e0c7ca50f9edaf500c078370e31a3e2e38aa702c34947')
+sha256sums=('cc15d30e8ef93cbbe4beeda1062bc53e3b4ed571251f5a7ac9aa1fea8bd8fbdf')
 
 conflicts=('origin-client' 'origin-client-bin')
 
