@@ -1,0 +1,13 @@
+pkgname=argo-bin
+pkgver=2.10.2
+pkgrel=1
+pkgdesc="Argo Workflows: Get stuff done with Kubernetes"
+arch=('x86_64')
+url="https://github.com/argoproj/argo"
+license=('Apache')
+source=("argo_$pkgver.gz::https://github.com/argoproj/argo/releases/download/v$pkgver/argo-linux-amd64.gz")
+sha256sums=('9c9a43cfc880acf52137c85740b69e78f66a9c10bcc7ea20b6fe792427abc28e')
+
+package() {
+  install -Dm755 "argo_$pkgver" "$pkgdir/usr/bin/argo"
+}
