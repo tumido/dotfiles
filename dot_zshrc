@@ -98,6 +98,14 @@ SPACESHIP_RPROMPT_ORDER=(
   exit_code     # Exit code section
 )
 
+# Bundles
+source <(antibody init)
+ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
+DISABLE_AUTO_UPDATE=true
+DISABLE_UPDATE_PROMPT=true
+ZSH_COMPDUMP=$HOME/.zcompdump
+antibody bundle < $zsh_folder/bundle.txt
+
 # Set up Ruby
 # eval "$(command rbenv init -)"
 # export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
@@ -106,7 +114,13 @@ SPACESHIP_RPROMPT_ORDER=(
 export PATH="$HOME/.npm-global/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 export NVM_SOURCE="/usr/share/nvm"
-[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"
+if [ -s "$NVM_SOURCE/nvm.sh" ]; then
+  nvm() {
+    unfunction "$0"
+    . "$NVM_SOURCE/nvm.sh"
+    $0 "$@"
+  }
+fi
 
 # Set up Python
 export PYENV_ROOT="$HOME/.pyenv"
@@ -122,7 +136,13 @@ _pip_completion() {
              COMP_CWORD=$(( cword-1 )) \
              PIP_AUTO_COMPLETE=1 $words[1] ) )
 }
-eval "$(pyenv init -)"
+if [ $commands[pyenv] ]; then
+  pyenv() {
+    unfunction "$0"
+    eval "$(pyenv init -)"
+    $0 "$@"
+  }
+fi
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
@@ -136,14 +156,6 @@ export EDITOR="$VISUAL"
 
 # Set sudo prompt
 export SUDO_PROMPT="💬🔑 "
-
-# Bundles
-source <(antibody init)
-ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
-DISABLE_AUTO_UPDATE=true
-DISABLE_UPDATE_PROMPT=true
-ZSH_COMPDUMP=$HOME/.zcompdump
-antibody bundle < $zsh_folder/bundle.txt
 
 # Init additional completions
 fpath+="$zsh_folder/zfunc"
@@ -168,7 +180,7 @@ bindkey '^[[Z'             autosuggest-accept
 
 # ALIASES
 # The Fuck
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 # Show memory waitong to write to disk
 alias dirty="watch grep -e Dirty: -e Writeback: /proc/meminfo"
 alias cat="pygmentize -g -O style=monokai"
@@ -191,7 +203,7 @@ alias ocd="oc describe"
 alias ocs="oc status"
 alias ocdel="oc delete"
 alias ocl="oc logs"
-alias occo="chromium `oc whoami --show-console`"
+alias occo="chromium \`oc whoami --show-console\`"
 alias t="PIPENV_DONT_LOAD_ENV=1 pipenv run pytest --pylama ."
 alias dotenv="set -a; source ./.env; set +a;"
 
@@ -242,10 +254,6 @@ function gif {
     ffmpeg -v "warning" -i "$1" -i "$palette" -lavfi "fps=10 [x]; [x][1:v] paletteuse=dither=sierra2_4a" -y "${1%.*}.gif"
 }
 
-# oh-my-zsh like cd
-# alias ...="cd ../.."
-# alias 1="cd -"
-# alias 2="cd -2"
 
 # Export payroll
 function export_payroll {
