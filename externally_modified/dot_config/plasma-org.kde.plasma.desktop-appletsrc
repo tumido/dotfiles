@@ -74,7 +74,7 @@ DialogWidth=720
 
 [Containments][2][Applets][23][Configuration][General]
 iconSize=enormous
-launchers=applications:chromium.desktop,file:///usr/share/applications/org.kde.dolphin.desktop,file:///usr/share/applications/org.kde.konsole.desktop,[ac174555-d3cc-4b73-80bd-5ea57f617c83]\napplications:visual-studio-code.desktop,applications:hamsket.desktop
+launchers=[ac174555-d3cc-4b73-80bd-5ea57f617c83]\napplications:chromium.desktop,file:///usr/share/applications/org.kde.dolphin.desktop,file:///usr/share/applications/org.kde.konsole.desktop,[ac174555-d3cc-4b73-80bd-5ea57f617c83]\napplications:visual-studio-code.desktop,[ac174555-d3cc-4b73-80bd-5ea57f617c83]\napplications:hamsket.desktop,[ed1f66ee-a4d1-4ed1-94d4-0a513fad3655]\napplications:spotify.desktop
 maxStripes=1
 middleClickAction=NewInstance
 showOnlyCurrentDesktop=false
@@ -120,8 +120,8 @@ PreloadWeight=100
 SystrayContainmentId=7
 
 [Containments][2][ConfigDialog]
-DialogHeight=1440
-DialogWidth=160
+DialogHeight=1080
+DialogWidth=159
 
 [Containments][2][Configuration]
 PreloadWeight=0
@@ -261,7 +261,7 @@ PreloadWeight=0
 
 [Containments][60][General]
 ToolBoxButtonState=topcenter
-ToolBoxButtonX=1499
+ToolBoxButtonX=741
 pressToMoveHelp=false
 
 [Containments][60][Wallpaper][org.kde.color][General]
@@ -422,18 +422,21 @@ immutability=1
 plugin=org.kde.plasma.printmanager
 
 [Containments][7][Applets][24][Configuration]
-PreloadWeight=20
+PreloadWeight=40
 
 [Containments][7][Applets][24][Configuration][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
+
+[Containments][7][Applets][24][Shortcuts]
+global=Ctrl+Shift+P
 
 [Containments][7][Applets][25]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][7][Applets][25][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][7][Applets][25][Configuration][ConfigDialog]
 DialogHeight=540
@@ -550,7 +553,7 @@ PreloadWeight=0
 
 [Containments][7][General]
 extraItems=org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.printmanager,org.kde.redshiftControl,org.kde.plasma.keyboardindicator,org.kde.plasma.vault,org.kde.ktp-contactlist,org.kde.plasma.nightcolorcontrol,org.kde.kscreen,firewall-applet,touchpad
-hiddenItems=Albert,org.kde.plasma.printmanager,org.kde.plasma.vault,rambox,firewall-applet,org.kde.kscreen,org.kde.plasma.weather,org.kde.weatherWidget
+hiddenItems=Albert,org.kde.plasma.vault,rambox,firewall-applet,org.kde.kscreen,org.kde.plasma.weather,org.kde.weatherWidget
 knownItems=org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.plasma.vault,org.kde.ktp-contactlist,org.kde.plasma.nightcolorcontrol
 
 [Containments][73][Wallpaper][org.kde.image][General]
@@ -569,5 +572,5 @@ wallpaperplugin=org.kde.image
 immutability=1
 
 [ScreenMapping]
-itemsOnDisabledScreens=2,2,desktop:/trash.desktop,desktop:/Home.desktop
+itemsOnDisabledScreens=2,2,desktop:/Home.desktop,desktop:/trash.desktop
 screenMapping=
