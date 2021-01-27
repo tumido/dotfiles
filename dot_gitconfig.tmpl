@@ -3,6 +3,9 @@
   name = {{ .name }}
   signingkey = {{ .keyid }}
 
+[init]
+  defaultBranch = main
+
 [push]
   default = current
   rebase = true
@@ -34,6 +37,7 @@
 
 [alias]
   root = rev-parse --show-toplevel
+  default-branch = "!f() { basename $(git rev-parse --abbrev-ref origin/HEAD); }; f"
 
   out = log --branches --not --remotes
   in = pull --dry-run
@@ -43,12 +47,12 @@
   cob = checkout -b
   cobf = "!f() { git brd $1; git cob $1; }; f"
   col = checkout HEAD~1
-  com = checkout master
+  com = "!f() { git checkout $(git default-branch); }; f"
 
-  c = commit
-  ca = commit -a
-  cm = commit --amend --no-edit
-  cam = commit --amend -a --no-edit
+  c = commit -s -m
+  ca = commit -s -a -m
+  cm = commit -s --amend --no-edit
+  cam = commit -s --amend -a --no-edit
   cma = cam
 
   cl = clean
@@ -73,12 +77,13 @@
 
   f = fetch
   fu = fetch upstream
-  fum =  fu master
+  fum =  "!f() { git fu $(git default-branch); }; f"
   fa = fetch --all
   fo = fetch origin
 
   p = push
   pf = push -f
+  pu = pull
 
   b = branch
 
@@ -88,9 +93,9 @@
   a = add -u -v
 
   lg = "log --graph --full-history --all --pretty=format:'%C(#ffaa00)%h%C(r) —— %C(magenta)%G? %C(bold blue)%an%C(r): %s %C(green)%ar%C(r) %C(red)%d%C(r)' --abbrev-commit --date=relative"
-  cleanup-origin = "!git branch -r --merged | awk '/origin/ && !/master/' | sed 's/origin\\///' | xargs -r -n 1 git push --delete origin"
-  cleanup-local = "!git branch --merged | grep -v 'master' | xargs -r -n 1 git branch -d"
-  update = "!git fum && git com && git rb upstream/master && git p"
+  cleanup-origin = "!git branch -r --merged | awk '/origin/ && !/master/ && !/main/' | sed 's/origin\\///' | xargs -r -n 1 git push --delete origin"
+  cleanup-local = "!git branch --merged | grep -vP '(master)|(main)' | xargs -r -n 1 git branch -d"
+  update = "!git fum && git com && git rb upstream/$(git default-branch) && git p"
 
   # cotc = !git sttc | xargs git checkout
   # como = !git stmo | xargs git checkout
@@ -193,7 +198,7 @@
   rbc = rebase --continue
   rba = rebase --abort
   rbs = rebase --skip
-  rbm = rb master
+  rbm = "!f() { git rb $(git default-branch); }; f"
 
   squash = !"f() { NL=$1; GIT_EDITOR=\"sed -i '2,$NL s/pick/squash/;/# This is the 2nd commit message:/,$ {d}'\"; git rebase -i HEAD~$NL; }; f"
   sq = !git squash $1
