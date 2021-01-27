@@ -318,3 +318,8 @@ function oct {
     token=`curl -u "$ldap_creds" -ik "$oauth_url?client_id=openshift-challenging-client&response_type=token" | grep -oP "access_token=\K[^&]*"`
     ocr $context --token=$token
 }
+
+function ansible-decrypt-from-clipboard {
+  xclip -o | ansible-vault decrypt -
+}
+
