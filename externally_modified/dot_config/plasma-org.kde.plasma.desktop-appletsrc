@@ -87,10 +87,12 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][45][Configuration]
-PreloadWeight=100
+PreloadWeight=9
 
 [Containments][2][Applets][45][Configuration][Appearance]
-selectedTimeZones=America/New_York,UTC+00:00,Local
+customDateFormat=
+selectedTimeZones=America/Tijuana,America/New_York,UTC+00:00,Local
+showDate=false
 showWeekNumbers=true
 wheelChangesTimezone=true
 
@@ -116,12 +118,12 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][6][Configuration]
-PreloadWeight=100
+PreloadWeight=92
 SystrayContainmentId=7
 
 [Containments][2][ConfigDialog]
-DialogHeight=1080
-DialogWidth=159
+DialogHeight=1440
+DialogWidth=169
 
 [Containments][2][Configuration]
 PreloadWeight=0
@@ -162,22 +164,6 @@ wallpaperplugin=org.kde.image
 
 [Containments][37][Configuration]
 PreloadWeight=0
-
-[Containments][38]
-ItemGeometriesHorizontal=
-activityId=ac174555-d3cc-4b73-80bd-5ea57f617c83
-formfactor=0
-immutability=1
-lastScreen=2
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
-
-[Containments][38][Configuration]
-PreloadWeight=0
-
-[Containments][38][Wallpaper][org.kde.image][General]
-Image=file:///usr/share/wallpapers/Next/contents/images/3840x2160.jpg
 
 [Containments][40]
 ItemGeometriesHorizontal=
@@ -261,7 +247,7 @@ PreloadWeight=0
 
 [Containments][60][General]
 ToolBoxButtonState=topcenter
-ToolBoxButtonX=741
+ToolBoxButtonX=1428
 pressToMoveHelp=false
 
 [Containments][60][Wallpaper][org.kde.color][General]
@@ -269,6 +255,7 @@ Color=0,0,0
 
 [Containments][60][Wallpaper][org.kde.image][General]
 Image=file:///home/tcoufal/Pictures/firewatch_mods_by_aaronolive_da8ovo1/Firewatch Mod Day.png
+SlidePaths=/usr/share/wallpapers
 
 [Containments][60][Wallpaper][org.kde.slideshow][General]
 SlidePaths=/home/tcoufal/Pictures/moon_walkers_wallpaper_5120x2880px_by_dpcdpc11_daxnkwo
@@ -302,6 +289,9 @@ wallpaperplugin=org.kde.image
 DialogHeight=540
 DialogWidth=720
 
+[Containments][65][Configuration]
+PreloadWeight=0
+
 [Containments][65][Wallpaper][org.kde.image][General]
 Image=file:///home/tcoufal/Pictures/firewatch_mods_by_aaronolive_da8ovo1/Firewatch Mod Night.png
 
@@ -318,6 +308,9 @@ wallpaperplugin=org.kde.image
 DialogHeight=540
 DialogWidth=720
 
+[Containments][68][Configuration]
+PreloadWeight=0
+
 [Containments][68][Wallpaper][org.kde.image][General]
 Image=file:///home/tcoufal/Pictures/firewatch_mods_by_aaronolive_da8ovo1/Firewatch Mod Night.png
 
@@ -333,6 +326,9 @@ wallpaperplugin=org.kde.image
 [Containments][69][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
+
+[Containments][69][Configuration]
+PreloadWeight=0
 
 [Containments][69][Wallpaper][org.kde.image][General]
 Image=file:///home/tcoufal/Pictures/firewatch_mods_by_aaronolive_da8ovo1/Firewatch Mod Night.png
@@ -351,14 +347,14 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][7][Applets][10][Configuration]
-PreloadWeight=100
+PreloadWeight=0
 
 [Containments][7][Applets][11]
 immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][7][Applets][11][Configuration]
-PreloadWeight=100
+PreloadWeight=0
 
 [Containments][7][Applets][11][Configuration][ConfigDialog]
 DialogHeight=540
@@ -369,7 +365,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][7][Applets][12][Configuration]
-PreloadWeight=100
+PreloadWeight=26
 
 [Containments][7][Applets][12][Configuration][ConfigDialog]
 DialogHeight=540
@@ -383,7 +379,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][7][Applets][14][Configuration]
-PreloadWeight=100
+PreloadWeight=0
 
 [Containments][7][Applets][14][Configuration][ConfigDialog]
 DialogHeight=540
@@ -394,7 +390,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][7][Applets][20][Configuration]
-PreloadWeight=100
+PreloadWeight=55
 
 [Containments][7][Applets][20][Configuration][ConfigDialog]
 DialogHeight=735
@@ -408,35 +404,35 @@ immutability=1
 plugin=org.kde.kdeconnect
 
 [Containments][7][Applets][21][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][7][Applets][22]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][7][Applets][22][Configuration]
-PreloadWeight=100
+PreloadWeight=0
 
 [Containments][7][Applets][24]
 immutability=1
 plugin=org.kde.plasma.printmanager
 
 [Containments][7][Applets][24][Configuration]
-PreloadWeight=40
+PreloadWeight=0
 
 [Containments][7][Applets][24][Configuration][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
 
 [Containments][7][Applets][24][Shortcuts]
-global=Ctrl+Shift+P
+global=
 
 [Containments][7][Applets][25]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][7][Applets][25][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][7][Applets][25][Configuration][ConfigDialog]
 DialogHeight=540
@@ -493,7 +489,7 @@ immutability=1
 plugin=org.kde.plasma.vault
 
 [Containments][7][Applets][47][Configuration]
-PreloadWeight=35
+PreloadWeight=0
 
 [Containments][7][Applets][47][Configuration][ConfigDialog]
 DialogHeight=540
@@ -515,7 +511,11 @@ immutability=1
 plugin=org.kde.kscreen
 
 [Containments][7][Applets][58][Configuration]
-PreloadWeight=20
+PreloadWeight=0
+
+[Containments][7][Applets][58][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][7][Applets][61]
 immutability=1
@@ -542,7 +542,7 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][7][Applets][9][Configuration]
-PreloadWeight=100
+PreloadWeight=0
 
 [Containments][7][ConfigDialog]
 DialogHeight=540
@@ -552,7 +552,7 @@ DialogWidth=720
 PreloadWeight=0
 
 [Containments][7][General]
-extraItems=org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.printmanager,org.kde.redshiftControl,org.kde.plasma.keyboardindicator,org.kde.plasma.vault,org.kde.ktp-contactlist,org.kde.plasma.nightcolorcontrol,org.kde.kscreen,firewall-applet,touchpad
+extraItems=org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.printmanager,org.kde.redshiftControl,org.kde.plasma.keyboardindicator,org.kde.plasma.vault,org.kde.ktp-contactlist,org.kde.plasma.nightcolorcontrol,org.kde.kscreen,firewall-applet,touchpad,org.kde.plasma.bluetooth
 hiddenItems=Albert,org.kde.plasma.vault,rambox,firewall-applet,org.kde.kscreen,org.kde.plasma.weather,org.kde.weatherWidget
 knownItems=org.kde.plasma.networkmanagement,org.kde.plasma.clipboard,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.discovernotifier,org.kde.plasma.printmanager,org.kde.plasma.keyboardindicator,org.kde.plasma.vault,org.kde.ktp-contactlist,org.kde.plasma.nightcolorcontrol
 
@@ -567,6 +567,49 @@ lastScreen=1
 location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
+
+[Containments][76][Configuration]
+PreloadWeight=0
+
+[Containments][79]
+activityId=ac174555-d3cc-4b73-80bd-5ea57f617c83
+formfactor=0
+immutability=1
+lastScreen=2
+location=0
+plugin=org.kde.desktopcontainment
+wallpaperplugin=org.kde.image
+
+[Containments][79][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][79][Configuration]
+PreloadWeight=0
+
+[Containments][79][Wallpaper][org.kde.image][General]
+Image=file:///home/tcoufal/Pictures/firewatch_mods_by_aaronolive_da8ovo1/Firewatch Mod Day.png
+SlidePaths=/usr/share/wallpapers
+
+[Containments][81]
+activityId=ed1f66ee-a4d1-4ed1-94d4-0a513fad3655
+formfactor=0
+immutability=1
+lastScreen=2
+location=0
+plugin=org.kde.desktopcontainment
+wallpaperplugin=org.kde.image
+
+[Containments][81][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][81][Configuration]
+PreloadWeight=0
+
+[Containments][81][Wallpaper][org.kde.image][General]
+Image=file:///home/tcoufal/Pictures/firewatch_mods_by_aaronolive_da8ovo1/Firewatch Mod Night.png
+SlidePaths=/usr/share/wallpapers
 
 [General]
 immutability=1
