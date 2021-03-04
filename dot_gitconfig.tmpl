@@ -18,6 +18,9 @@
 [pull]
   rebase = true
 
+[rebase]
+  autoSquash = true
+
 [credential]
   helper = cache
 
@@ -50,6 +53,7 @@
   com = "!f() { git checkout $(git default-branch); }; f"
 
   c = commit -s -m
+  cf = "!f() { git commit --fixup=$1; }; f"
   ca = commit -s -a -m
   cm = commit -s --amend --no-edit
   cam = commit -s --amend -a --no-edit
@@ -81,6 +85,7 @@
   fa = fetch --all
   fo = fetch origin
 
+  pr = "!f() { git fu pull/$1/head:pr/$1; git co pr/$1; }; f"
   p = push
   pf = push -f
   pu = pull
@@ -193,6 +198,7 @@
   rb = rebase
   rbad = rebase --committer-date-is-author-date
   rbi = rebase -i
+  rbim = "!f() { git rbi $(git default-branch); }; f"
   rbtc = !git theirs `git unmerged` || git resolve-unmerged && (git rbc || git rbs)
   rboc = !git ours `git unmerged` || git reset `git unmerged` && git a . && (git rbc || git rbs)
   rbc = rebase --continue
@@ -237,7 +243,7 @@
   rf = reflog
   rfe = reflog expire --expire=now --all
 
-  pr = prune
+  pru = prune
   prm = !git rfe && git gcp
 
   fsize = git ls-tree -r -t -l --full-name HEAD | sort -rn -k 4 | less
