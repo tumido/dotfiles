@@ -59,7 +59,8 @@
   cam = commit -s --amend -a --no-edit
   cma = cam
 
-  cl = clean
+  cl = "!f() { git clone $1; USERNAME=$(echo \"$1\" | grep -oP '(?<=:)(.*)(?=/)' ); FOLDER=$(echo \"$1\" | grep -oP '(?<=/)(.*)(?=\\.)'); cd $FOLDER; git rema upstream ${1/$USERNAME/$2}; }; f"
+
   cldf = clean -df
 
   res = reset
