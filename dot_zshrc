@@ -51,7 +51,6 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-
 # PROMT THEME
 CASE_SENSITIVE=true
 SPACESHIP_CHAR_COLOR_SUCCESS=208
@@ -99,12 +98,22 @@ SPACESHIP_RPROMPT_ORDER=(
 )
 
 # Bundles
-source <(antibody init)
+# Before sourcing
+plugins=(fzf command-not-found man colored-man-pages colorize dirhistory magic-enter)
+NVM_LAZY_LOAD=true
+NVM_AUTO_USE=true
+
+source $zsh_folder/bundle.sh
+
+# After sourcing
 ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
 DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
 ZSH_COMPDUMP=$HOME/.zcompdump
-antibody bundle < $zsh_folder/bundle.txt
+FZF_DEFAULT_OPTS='--height 40% --reverse --border=horizontal --prompt=" " --pointer="•" --marker="❌"'
+ZSH_COLORIZE_STYLE=monokai
+MAGIC_ENTER_GIT_COMMAND='g s'
+MAGIC_ENTER_OTHER_COMMAND='ll .'
 
 # Set up Ruby
 # eval "$(command rbenv init -)"
@@ -112,15 +121,6 @@ antibody bundle < $zsh_folder/bundle.txt
 
 # Set NPM global dir
 export PATH="$HOME/.npm-global/bin:$PATH"
-export NVM_DIR="$HOME/.nvm"
-export NVM_SOURCE="/usr/share/nvm"
-if [ -s "$NVM_SOURCE/nvm.sh" ]; then
-  nvm() {
-    unfunction "$0"
-    . "$NVM_SOURCE/nvm.sh"
-    $0 "$@"
-  }
-fi
 
 # Set up Python
 export PYENV_ROOT="$HOME/.pyenv"
@@ -183,7 +183,6 @@ bindkey '^[[Z'             autosuggest-accept
 #eval $(thefuck --alias)
 # Show memory waitong to write to disk
 alias dirty="watch grep -e Dirty: -e Writeback: /proc/meminfo"
-alias cat="pygmentize -g -O style=monokai"
 
 alias be="bundle exec"
 alias ber="be rake"
@@ -293,15 +292,18 @@ function toggle_trackpoint {
 }
 
 function src {
-	autoload -U compinit zrecompile
-	compinit -i -d $ZSH_COMPDUMP
+    antibody update
+    antibody bundle < $zsh_folder/bundle.txt > $zsh_folder/bundle.sh
 
-	for f in ~/.zshrc $ZSH_COMPDUMP; do
-		zrecompile -p $f && command rm -f $f.zwc.old
-	done
+    autoload -U compinit zrecompile
+    compinit -i -d $ZSH_COMPDUMP
 
-	# Use $SHELL if available; remove leading dash if login shell
-	[[ -n "$SHELL" ]] && exec ${SHELL#-} || exec zsh
+    for f in ~/.zshrc $ZSH_COMPDUMP; do
+        zrecompile -p $f && command rm -f $f.zwc.old
+    done
+
+    # Use $SHELL if available; remove leading dash if login shell
+    [[ -n "$SHELL" ]] && exec ${SHELL#-} || exec zsh
 }
 
 function magnet {
@@ -317,6 +319,13 @@ function oct {
     oauth_url=`curl -sk "$base_url/.well-known/oauth-authorization-server" | fx .authorization_endpoint`
     token=`curl -u "$ldap_creds" -ik "$oauth_url?client_id=openshift-challenging-client&response_type=token" | grep -oP "access_token=\K[^&]*"`
     ocr $context --token=$token
+}
+
+function gpg_secret {
+    secret=$1
+    namespace=$2
+    gpg_key=$3
+    ocg secrets/$secret -n $namespace -o json | jq '.data | map_values(@base64d)' | gpg --armor --encrypt -o $secret.gpg.txt -r $gpg_key
 }
 
 function ansible-decrypt-from-clipboard {
