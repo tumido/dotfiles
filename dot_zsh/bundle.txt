@@ -5,6 +5,7 @@ djui/alias-tips
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 
+lukechilds/zsh-nvm
 
 mafredri/zsh-async
 denysdovhan/spaceship-prompt
