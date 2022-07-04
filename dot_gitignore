@@ -11,3 +11,8 @@ __pycache__
 .vscode
 .decrypted~*
 .nvmrc
+
+.cache
+kustomize
+
+token
