@@ -98,7 +98,7 @@
   ap = add -p -v
   a = add -u -v
 
-  lg = "log --graph --full-history --all --pretty=format:'%C(#ffaa00)%h%C(r) —— %C(magenta)%G? %C(bold blue)%an%C(r): %s %C(green)%ar%C(r) %C(red)%d%C(r)' --abbrev-commit --date=relative"
+  lg = "log --graph --full-history --all --pretty=format:'%C(#ffaa00)%h%Creset —— %C(magenta)%G? %C(bold blue)%an%Creset: %s %C(green)%ar%Creset %C(red)%d%Creset' --abbrev-commit --date=relative"
   cleanup-origin = "!git branch -r --merged | awk '/origin/ && !/master/ && !/main/' | sed 's/origin\\///' | xargs -r -n 1 git push --delete origin"
   cleanup-local = "!git branch --merged | grep -vP '(master)|(main)' | xargs -r -n 1 git branch -d"
   update = "!git fum && git com && git rb upstream/$(git default-branch) && git p"
@@ -217,6 +217,7 @@
   bsg = bisect good
 
   current = rev-parse --abbrev-ref HEAD
+  rename = "!f() { git br --move $(git current) $1; }; f"
   br = branch
   brc = rev-parse --abbrev-ref HEAD
   bra = branch -a
@@ -251,3 +252,6 @@
 
   findemptydirs = !"find . -type d -empty ! -path ./tmp/\\*"
   deleteemptydirs = !"find . -type d -empty ! -path ./tmp/\\* -exec rmdir {} \\;"
+
+[remote "origin"]
+  fetch = ^refs/heads/gh-pages
