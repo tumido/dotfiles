@@ -1,14 +1,7 @@
 robbyrussell/oh-my-zsh
-
 djui/alias-tips
-
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
-
-lukechilds/zsh-nvm
-
 mafredri/zsh-async
-denysdovhan/spaceship-prompt
-#trapd00r/zsh-syntax-highlighting-filetypes
-
 zsh-users/zsh-syntax-highlighting
+Aloxaf/fzf-tab
