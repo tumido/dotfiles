@@ -1,97 +1,80 @@
-Height 1080=636
+DP-1-3 Height 3440x1440=636
+DP-1-3 Width 3440x1440=1363
+DP-1-3 XPosition 3440x1440=2
+DP-1-3 YPosition 3440x1440=4
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAwAAAAAAAADZAAACfPwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAACfAAAAFoBAAADAAAAAQAAAXgAAAJe/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAB4AAAJeAAAACgEAAAMAAAADAAAFJwAAALX8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAsAAAFJwAAAAoBAAADAAAETQAAAnwAAAAEAAAABAAAAAgAAAAI/AAAAAIAAAAAAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAAAA==
-Width 1920=1363
-
-[AdditionalInfoDialog]
-Height 1080=294
-Width 1920=300
+State=AAAA/wAAAAD9AAAAAwAAAAAAAAC4AAACfPwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAACfAAAAF0BAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAoBAAADAAAEbAAAAnwAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAA=
 
 [CompactMode]
 FontWeight=50
 
-[Desktop Entry]
-DefaultProfile=Zsh.profile
-
 [DetailsMode]
 FontWeight=50
-IconSize=22
-
-[DownloadDialog Settings]
-Height 1080=494
-Width 1920=700
-
-[Favorite Profiles]
-Favorites=
 
 [General]
 AutoExpandFolders=true
 BrowseThroughArchives=true
-ConfirmClosingMultipleTabs=false
+CloseActiveSplitView=false
 GlobalViewProps=false
 RememberOpenedTabs=false
-ShowCopyMoveMenu=true
-ShowFullPath=true
 ShowToolTips=true
 UseTabForSwitchingSplitView=true
-Version=200
-ViewPropsTimestamp=2018,4,25,13,31,23
+Version=201
+ViewPropsTimestamp=2021,10,1,16,34,26.574
 
 [IconsMode]
 FontWeight=50
 IconSize=112
-MaximumTextLines=1
-PreviewSize=144
+PreviewSize=112
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
 
 [KPropertiesDialog]
-DP-1-3 Height 1440=458
 DP-1-3 Height 3440x1440=458
-DP-1-3 Width 3440=375
-DP-1-3 Width 3440x1440=372
-Height 1080=518
-Height 1440=542
-Width 1920=501
-Width 3440=507
+DP-1-3 Width 3440x1440=386
+eDP-1 Height 1920x1080=458
+eDP-1 Width 1920x1080=412
 
 [MainWindow]
-DP-1-1 Height 1440=636
-DP-1-1 Width 3440=1363
-DP-1-1 XPosition=2
-DP-1-1 YPosition=4
-DP-1-3 Height 1440=636
+DP-1-1 DP-1-2 Height 1920x1080=636
+DP-1-1 DP-1-2 Width 1920x1080=1363
+DP-1-1 DP-1-2 XPosition 1920x1080=1922
+DP-1-1 DP-1-2 YPosition 1920x1080=4
+DP-1-2 eDP-1 Height 1920x1080=636
+DP-1-2 eDP-1 Width 1920x1080=1363
+DP-1-2 eDP-1 XPosition 1920x1080=1922
+DP-1-2 eDP-1 YPosition 1920x1080=4
 DP-1-3 Height 3440x1440=636
-DP-1-3 Width 3440=1363
 DP-1-3 Width 3440x1440=1363
-DP-1-3 XPosition=2
-DP-1-3 XPosition 3440x1440=2
-DP-1-3 YPosition=800
-DP-1-3 YPosition 3440x1440=800
-DP-1-3 eDP-1 Height 1080=636
-DP-1-3 eDP-1 Height 1440=636
-DP-1-3 eDP-1 Width 1920=1363
-DP-1-3 eDP-1 Width 3440=1363
-DP-1-3 eDP-1 XPosition=2520
-DP-1-3 eDP-1 YPosition=317
-DP-2-3 Height 3440x1440=636
-DP-2-3 Width 3440x1440=1363
-DP-2-3 XPosition 3440x1440=0
-DP-2-3 YPosition 3440x1440=4
-Height 1080=636
-Height 1440=636
-Height 1920=636
+DP-1-3 XPosition 3440x1440=1149
+DP-1-3 YPosition 3440x1440=4
+DP-1-3 eDP-1 Height 1920x1080=636
+DP-1-3 eDP-1 Height 3440x1440=636
+DP-1-3 eDP-1 Width 1920x1080=1363
+DP-1-3 eDP-1 Width 3440x1440=1363
+DP-1-3 eDP-1 XPosition 1920x1080=279
+DP-1-3 eDP-1 XPosition 3440x1440=1149
+DP-1-3 eDP-1 YPosition 1920x1080=222
+DP-1-3 eDP-1 YPosition 3440x1440=4
+DP-5 Height 3440x1440=665
+DP-5 Width 3440x1440=1427
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAwAAAAAAAADaAAACfPwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAACfAAAAF0BAAADAAAAAQAAAXgAAAJe/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAB4AAAJeAAAACgEAAAMAAAADAAAFMwAAALX8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAgAAAFMwAAAAoBAAADAAAEUAAAAnwAAAAEAAAABAAAAAgAAAAI/AAAAAIAAAAAAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAAAA==
 ToolBarsMovable=Disabled
-Width 1080=1078
-Width 1920=1363
-Width 3440=1363
-eDP-1 Height 1080=636
+eDP-1 DP-1-1 DP-1-2 Height 1920x1080=636
+eDP-1 DP-1-1 DP-1-2 Width 1920x1080=1363
+eDP-1 DP-1-1 DP-1-2 XPosition 1920x1080=2010
+eDP-1 DP-1-1 DP-1-2 YPosition 1920x1080=120
+eDP-1 DP-1-3 Height 3440x1440=636
+eDP-1 DP-1-3 Width 3440x1440=1363
+eDP-1 DP-1-3 XPosition 3440x1440=1149
+eDP-1 DP-1-3 YPosition 3440x1440=4
+eDP-1 DP-5 Height 3440x1440=648
+eDP-1 DP-5 Width 3440x1440=1447
 eDP-1 Height 1920x1080=636
-eDP-1 Width 1920=1363
 eDP-1 Width 1920x1080=1363
-eDP-1 XPosition=2
-eDP-1 XPosition 1920x1080=0
-eDP-1 YPosition=4
+eDP-1 XPosition 1920x1080=555
 eDP-1 YPosition 1920x1080=4
 
 [MainWindow][Toolbar mainToolBar]
@@ -99,27 +82,21 @@ IconSize=16
 ToolButtonStyle=IconOnly
 
 [Open-with settings]
-CompletionMode=5
-History=okular,kate,ark,inkscape,chr,vlc,lximage-qt,krename,gravit-designer,/usr/bin/vlc --started-from-file %U,kate -b %U,okular %U %i -caption %c,inkscape %F,gimp-2.8 %U,kate -b -n %U
+CompletionMode=1
+History=ink,kate,mp
 
 [PreviewSettings]
-Plugins=directorythumbnail,imagethumbnail,jpegthumbnail,svgthumbnail
-
-[Search]
-Location=Everywhere
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mltpreview,opendocumentthumbnail,svgthumbnail
 
 [SettingsDialog]
-Height 1080=450
-Height 1440=450
-Width 1920=572
-Width 3440=572
+DP-1-3 Height 3440x1440=440
+DP-1-3 Width 3440x1440=589
+eDP-1 Height 1920x1080=438
+eDP-1 Width 1920x1080=589
 
 [Toolbar mainToolBar]
-IconSize=16
 ToolButtonStyle=IconOnly
 
 [ViewPropertiesDialog]
-Height 1080=454
-Height 1440=454
-Width 1920=367
-Width 3440=375
+DP-1-3 Height 3440x1440=306
+DP-1-3 Width 3440x1440=375

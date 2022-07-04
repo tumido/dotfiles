@@ -1,5 +1,101 @@
 [$Version]
-update_info=spectacle_shortcuts.upd:spectacle-migrate-shortcuts
+update_info=spectacle_shortcuts.upd:spectacle-migrate-shortcuts,konsole_globalaccel.upd:konsole_globalaccel
+
+[ColorEffects:Disabled]
+ChangeSelectionColor[$d]
+Color[$d]
+ColorAmount[$d]
+ColorEffect[$d]
+ContrastAmount[$d]
+ContrastEffect[$d]
+Enable[$d]
+IntensityAmount[$d]
+IntensityEffect[$d]
+
+[ColorEffects:Inactive]
+ChangeSelectionColor[$d]
+Color[$d]
+ColorAmount[$d]
+ColorEffect[$d]
+ContrastAmount[$d]
+ContrastEffect[$d]
+Enable[$d]
+IntensityAmount[$d]
+IntensityEffect[$d]
+
+[Colors:Button]
+BackgroundAlternate[$d]
+BackgroundNormal[$d]
+DecorationFocus[$d]
+DecorationHover[$d]
+ForegroundActive[$d]
+ForegroundInactive[$d]
+ForegroundLink[$d]
+ForegroundNegative[$d]
+ForegroundNeutral[$d]
+ForegroundNormal[$d]
+ForegroundPositive[$d]
+ForegroundVisited[$d]
+
+[Colors:Complementary]
+BackgroundNormal[$d]
+DecorationFocus[$d]
+
+[Colors:Selection]
+BackgroundAlternate[$d]
+BackgroundNormal[$d]
+DecorationFocus[$d]
+DecorationHover[$d]
+ForegroundActive[$d]
+ForegroundInactive[$d]
+ForegroundLink[$d]
+ForegroundNegative[$d]
+ForegroundNeutral[$d]
+ForegroundNormal[$d]
+ForegroundPositive[$d]
+ForegroundVisited[$d]
+
+[Colors:Tooltip]
+BackgroundAlternate[$d]
+BackgroundNormal[$d]
+DecorationFocus[$d]
+DecorationHover[$d]
+ForegroundActive[$d]
+ForegroundInactive[$d]
+ForegroundLink[$d]
+ForegroundNegative[$d]
+ForegroundNeutral[$d]
+ForegroundNormal[$d]
+ForegroundPositive[$d]
+ForegroundVisited[$d]
+
+[Colors:View]
+BackgroundAlternate[$d]
+BackgroundNormal[$d]
+DecorationFocus[$d]
+DecorationHover[$d]
+ForegroundActive[$d]
+ForegroundInactive[$d]
+ForegroundLink[$d]
+ForegroundNegative[$d]
+ForegroundNeutral[$d]
+ForegroundNormal[$d]
+ForegroundPositive[$d]
+ForegroundVisited[$d]
+
+[Colors:Window]
+BackgroundAlternate[$d]
+BackgroundNormal[$d]
+DecorationFocus[$d]
+DecorationHover[$d]
+ForegroundActive[$d]
+ForegroundInactive[$d]
+ForegroundLink[$d]
+ForegroundNegative[$d]
+ForegroundNeutral[$d]
+ForegroundNormal[$d]
+ForegroundPositive[$d]
+ForegroundVisited[$d]
 
 [Data]
 DataCount=5
@@ -1009,9 +1105,9 @@ Uuid={79dfe584-0eef-4fa7-9bd5-6d13234d8d0b}
 
 [Data_5]
 Comment=Shortcuts for taking screenshots with Flameshot
-DataCount=4
+DataCount=5
 Enabled=true
-ImportId=flameshot
+ImportId=Flameshot
 Name=Flameshot
 SystemGroup=0
 Type=ACTION_DATA_GROUP
@@ -1030,11 +1126,8 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_5_1Actions0]
-Arguments='Pictures/Screenshots' 0 0
-Call=graphicCapture
-RemoteApp=org.flameshot.Flameshot
-RemoteObj=/
-Type=DBUS
+CommandURL=flameshot gui
+Type=COMMAND_URL
 
 [Data_5_1Conditions]
 Comment=
@@ -1047,7 +1140,7 @@ TriggersCount=1
 [Data_5_1Triggers0]
 Key=Print
 Type=SHORTCUT
-Uuid={65ecb470-7d89-497a-9f9d-406b068f7207}
+Uuid={550679a7-6038-4d71-9d70-045dee9e7ad0}
 
 [Data_5_2]
 Comment=Wait for 3 seconds, then start the Flameshot screenshot tool and take a screenshot
@@ -1059,11 +1152,8 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_5_2Actions0]
-Arguments='Pictures/Screenshots' 3000 0
-Call=graphicCapture
-RemoteApp=org.flameshot.Flameshot
-RemoteObj=/
-Type=DBUS
+CommandURL=flameshot gui --delay 3000
+Type=COMMAND_URL
 
 [Data_5_2Conditions]
 Comment=
@@ -1074,9 +1164,9 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_5_2Triggers0]
-Key=Ctrl+Print
+Key=
 Type=SHORTCUT
-Uuid={cea82966-75d5-437d-afaf-aeba83a4abfd}
+Uuid={13cf7a93-9bae-4864-b6f6-dbe09e1b548a}
 
 [Data_5_3]
 Comment=Take a full-screen (all monitors) screenshot and save it
@@ -1088,11 +1178,8 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_5_3Actions0]
-Arguments='Pictures/Screenshots' false 0 0
-Call=fullScreen
-RemoteApp=org.flameshot.Flameshot
-RemoteObj=/
-Type=DBUS
+CommandURL=flameshot full
+Type=COMMAND_URL
 
 [Data_5_3Conditions]
 Comment=
@@ -1103,12 +1190,12 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_5_3Triggers0]
-Key=Shift+Print
+Key=
 Type=SHORTCUT
-Uuid={3c7ead73-00ad-4f90-bdba-5d15a70b8b43}
+Uuid={32eeef66-9df9-4ff0-8bca-9c80941d74b2}
 
 [Data_5_4]
-Comment=Take a full-screen (all monitors) screenshot and copy it to the clipboard
+Comment=Take a full-screen (all monitors) screenshot and copy it to the clipboard and ask where to save
 Enabled=true
 Name=Take full-screen screenshot and copy it to clipboard
 Type=SIMPLE_ACTION_DATA
@@ -1117,11 +1204,8 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_5_4Actions0]
-Arguments='' true 0 0
-Call=fullScreen
-RemoteApp=org.flameshot.Flameshot
-RemoteObj=/
-Type=DBUS
+CommandURL=flameshot full --clipboard
+Type=COMMAND_URL
 
 [Data_5_4Conditions]
 Comment=
@@ -1132,9 +1216,64 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_5_4Triggers0]
-Key=Ctrl+Shift+Print
+Key=Shift+Print
 Type=SHORTCUT
-Uuid={a724b514-0cb6-40f0-bf14-c08db726b320}
+Uuid={7a4033b1-f641-4dab-9c4e-78bf3fa0ea8c}
+
+[Data_5_5]
+Comment=Open the Flameshot Launcher
+Enabled=false
+Name=Open Flameshot Launcher
+Type=SIMPLE_ACTION_DATA
+
+[Data_5_5Actions]
+ActionsCount=1
+
+[Data_5_5Actions0]
+CommandURL=flameshot launcher
+Type=COMMAND_URL
+
+[Data_5_5Conditions]
+Comment=
+ConditionsCount=0
+
+[Data_5_5Triggers]
+Comment=Simple_action
+TriggersCount=1
+
+[Data_5_5Triggers0]
+Key=Ctrl+Print
+Type=SHORTCUT
+Uuid={b0f9c859-bf84-42c6-8ae0-94da1a616cf1}
+
+[DesktopIcons]
+Size[$d]
+
+[DialogIcons]
+Size[$d]
+
+[DirSelect Dialog]
+DirSelectDialog Size[$d]
+History Items[$d]
+
+[Emoticons]
+emoticonsTheme[$d]
+parseMode[$d]
+
+[General]
+BrowserApplication[$d]
+ColorScheme[$d]
+ColorSchemeHash[$d]
+Name[$d]
+XftHintStyle[$d]
+XftSubPixel[$d]
+fixed[$d]
+font[$d]
+menuFont[$d]
+shadeSortColumn[$d]
+smallestReadableFont[$d]
+toolBarFont[$d]
+widgetStyle[$d]
 
 [Gestures]
 Disabled=true
@@ -1145,10 +1284,86 @@ Timeout=300
 Comment=
 WindowsCount=0
 
+[Icons]
+Theme[$d]
+
+[KDE]
+AnimationDurationFactor[$d]
+ColorScheme[$d]
+DoubleClickInterval[$d]
+LookAndFeelPackage[$d]
+ShowDeleteCommand[$d]
+ShowIconsInMenuItems[$d]
+ShowIconsOnPushButtons[$d]
+SingleClick[$d]
+StartDragDist[$d]
+StartDragTime[$d]
+WheelScrollLines[$d]
+contrast[$d]
+widgetStyle[$d]
+
+[KFileDialog Settings]
+Allow Expansion[$d]
+Automatically select filename extension[$d]
+Breadcrumb Navigation[$d]
+Decoration position[$d]
+LocationCombo Completionmode[$d]
+PathCombo Completionmode[$d]
+Preview Width[$d]
+Show Bookmarks[$d]
+Show Full Path[$d]
+Show Inline Previews[$d]
+Show Preview[$d]
+Show Speedbar[$d]
+Show hidden files[$d]
+Sort by[$d]
+Sort directories first[$d]
+Sort hidden files last[$d]
+Sort reversed[$d]
+Speedbar Width[$d]
+View Style[$d]
+detailedViewIconSize[$d]
+listViewIconSize[$d]
+
+[KScreen]
+ScaleFactor[$d]
+ScreenScaleFactors[$d]
+
+[KShortcutsDialog Settings]
+Dialog Size[$d]
+
 [Main]
-AlreadyImported=defaults,spectacle,konqueror_gestures_kde321,kde32b1,konsole,flameshot
+AlreadyImported=defaults,spectacle,konqueror_gestures_kde321,kde32b1,konsole,flameshot,Flameshot
 Disabled=false
 Version=2
 
+[MainToolbarIcons]
+Size[$d]
+
+[PanelIcons]
+Size[$d]
+
+[PreviewSettings]
+MaximumRemoteSize[$d]
+
+[SmallIcons]
+Size[$d]
+
+[Toolbar style]
+ToolButtonStyle[$d]
+ToolButtonStyleOtherToolbars[$d]
+
+[ToolbarIcons]
+Size[$d]
+
 [Voice]
 Shortcut=
+
+[WM]
+activeBackground[$d]
+activeBlend[$d]
+activeFont[$d]
+activeForeground[$d]
+inactiveBackground[$d]
+inactiveBlend[$d]
+inactiveForeground[$d]
