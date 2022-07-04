@@ -6,39 +6,40 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt share_history appendhistory inc_append_history hist_ignore_space hist_ignore_all_dups hist_reduce_blanks extended_history
-HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear";
-HISTCONTROL='ignoreboth';
+HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+HISTORY_IGNORE="exit|ls|bg|fg|history|clear|ll"
+HISTCONTROL=ignoreboth
 
 # OPTIONS
-setopt autocd extendedglob notify prompt_subst complete_in_word always_to_end auto_pushd long_list_jobs complete_aliases
+setopt autocd extendedglob notify prompt_subst complete_in_word always_to_end auto_pushd long_list_jobs complete_aliases chase_links
 unsetopt beep nomatch
 bindkey -e
 
 # COMPLETION STYLE
 
 # Use menu select
-zstyle ':completion:*' menu select
+#zstyle ':completion:*' menu select
 # General style
-zstyle ':completion:*' verbose true
-zstyle ':completion:*' rehash true
-zstyle ':completion:*' list-dirs-first true
-zstyle ':completion:*:corrections' format '%U%F{green}%d (errors: %e)%f%u'
-zstyle ':completion:*:warnings' format '%F{202}%BSorry, no matches for: %F{214}%d%b'
+#zstyle ':completion:*' verbose true
+#zstyle ':completion:*' rehash true
+#zstyle ':completion:*' list-dirs-first true
+#zstyle ':completion:*:corrections' format '%U%F{green}%d (errors: %e)%f%u'
+#zstyle ':completion:*:warnings' format '%F{202}%BSorry, no matches for: %F{214}%d%b'
 # Show group names
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*:matches' group 'yes'
-zstyle ':completion:*:options' description 'yes'
-zstyle ':completion:*:options' auto-description '%d'
-zstyle ':completion:*:descriptions' format "%F{31}%d:%f"
+#zstyle ':completion:*' group-name ''
+#zstyle ':completion:*:matches' group 'yes'
+#zstyle ':completion:*:options' description 'yes'
+#zstyle ':completion:*:options' auto-description '%d'
+#zstyle ':completion:*:descriptions' format "%F{31}%d:%f"
 # Coloring
-zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==33=}:${(s.:.)LS_COLORS}:ma=33;4")'
-zstyle ':completion:*:options:descriptions' list-colors '=*=33'
-zstyle ':completion:*:*:*:*:hosts' list-colors '=*=31'
-zstyle ':completion:*:*:*:*:users' list-colors '=*=32'
+#zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==33=}:${(s.:.)LS_COLORS}:ma=33;4")'
+#zstyle ':completion:*:options:descriptions' list-colors '=*=33'
+#zstyle ':completion:*:*:*:*:hosts' list-colors '=*=31'
+#zstyle ':completion:*:*:*:*:users' list-colors '=*=32'
 # LS_COLORS
 eval $(dircolors -b $zsh_folder/LS_COLORS)
 # Git don't show remote branches
-zstyle ':completion::complete:git-checkout:argument-rest:headrefs' command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
+#zstyle ':completion::complete:git-checkout:argument-rest:headrefs' command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
 # This speeds up pasting w/ autosuggest
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238
 pasteinit() {
@@ -51,57 +52,47 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
+
+# FZF-tab
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group left right 
+
+# preview style
+FZF_DEFAULT_OPTS='--reverse --border=horizontal --prompt=" " --pointer="•" --marker="❌" --height=100%'
+FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS --preview 'less {}' --preview-window right,50%,border-left"
+export BAT_STYLE="numbers"
+zstyle ':fzf-tab:*' fzf-flags --reverse --border=horizontal --prompt=" "  --pointer="•" --marker="❌" --preview-window right,50%,border-left --height=100%
+
+# give a preview of commandline arguments when completing `kill`
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview "[[ $group == '[process ID]' ]] && ps --pid=$word -o cmd --no-headers -w -w'"
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
+
+# file content previews
+zstyle ':fzf-tab:complete:(-command-|ls|cat|ll):*' fzf-preview 'less ${(Q)realpath}'
+export LESSOPEN='|~/.lessfilter %s'
+
+# systemd unit status
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+
+# env variables
+zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' fzf-preview 'echo ${(P)word}'
+
+
 # PROMT THEME
-CASE_SENSITIVE=true
-SPACESHIP_CHAR_COLOR_SUCCESS=208
-SPACESHIP_CHAR_SYMBOL=" "
-SPACESHIP_DIR_COLOR=blue
-SPACESHIP_DIR_TRUNC_PREFIX="…/"
-SPACESHIP_DIR_LOCK_SYMBOL=" "
-SPACESHIP_JOBS_COLOR="green"
-SPACESHIP_EXIT_CODE_SHOW=true
-SPACESHIP_CONDA_SYMBOL=""
-#SPACESHIP_PYENV_SYMBOL=" "
-SPACESHIP_GIT_SYMBOL=" "
-#SPACESHIP_GIT_STATUS_PREFIX=" "
-#SPACESHIP_GIT_STATUS_SUFFIX=""
-SPACESHIP_GIT_STATUS_PREFIX=""
-SPACESHIP_GIT_STATUS_SUFFIX=""
-SPACESHIP_GIT_STATUS_UNTRACKED=" "
-SPACESHIP_GIT_STATUS_ADDED=" "
-SPACESHIP_GIT_STATUS_MODIFIED=" "
-SPACESHIP_GIT_STATUS_RENAMED=" "
-SPACESHIP_GIT_STATUS_DELETED=" "
-SPACESHIP_GIT_STATUS_STASHED=" ﮫ"
-SPACESHIP_GIT_STATUS_UNMERGED=" "
-SPACESHIP_GIT_STATUS_AHEAD=" "
-SPACESHIP_GIT_STATUS_BEHIND=" "
-SPACESHIP_GIT_STATUS_DIVERGED=" "
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  host          # Hostname section
-  dir           # Current directory section
-  git           # Git section (git_branch + git_status)
-  exec_time     # Execution time
-  jobs          # Background jobs indicator
-  char          # Prompt character
-)
-SPACESHIP_RPROMPT_ORDER=(
-  package       # Package version
-  node          # Node.js section
-  ruby          # Ruby section
-  docker        # Docker section
-  venv          # virtualenv section
-  conda         # Conda section
-  pyenv         # Pyenv section
-  exit_code     # Exit code section
-)
+eval "$(starship init zsh)"
 
 # Bundles
 # Before sourcing
-plugins=(fzf command-not-found man colored-man-pages colorize dirhistory magic-enter)
-NVM_LAZY_LOAD=true
-NVM_AUTO_USE=true
+plugins=(fzf nvm command-not-found sudo man colored-man-pages colorize dirhistory copybuffer magic-enter cp dotenv)
+#export NVM_LAZY=1
+export NVM_AUTOLOAD=1
 
 source $zsh_folder/bundle.sh
 
@@ -110,10 +101,10 @@ ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SL
 DISABLE_AUTO_UPDATE=true
 DISABLE_UPDATE_PROMPT=true
 ZSH_COMPDUMP=$HOME/.zcompdump
-FZF_DEFAULT_OPTS='--height 40% --reverse --border=horizontal --prompt=" " --pointer="•" --marker="❌"'
 ZSH_COLORIZE_STYLE=monokai
 MAGIC_ENTER_GIT_COMMAND='g s'
 MAGIC_ENTER_OTHER_COMMAND='ll .'
+export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ ll g oc"
 
 # Set up Ruby
 # eval "$(command rbenv init -)"
@@ -154,12 +145,19 @@ export PATH="${GOPATH//://bin:}/bin:$PATH"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# Set krew plugins
+export PATH="$PATH:$HOME/.krew/bin"
+
 # Set sudo prompt
 export SUDO_PROMPT="💬🔑 "
+
+# Set Chromium for Flutter
+export CHROME_EXECUTABLE=chromium
 
 # Init additional completions
 fpath+="$zsh_folder/zfunc"
 compdef _pipenv pipenv
+compdef _gh gh
 compctl -K _pip_completion pip
 
 
@@ -205,8 +203,14 @@ alias ocl="oc logs"
 alias occo="chromium \`oc whoami --show-console\`"
 alias t="PIPENV_DONT_LOAD_ENV=1 pipenv run pytest --pylama ."
 alias dotenv="set -a; source ./.env; set +a;"
+alias c="code ."
+alias v="code ."
+alias gh="PAGER=cat gh"
 
 # FUNCTIONS
+
+# Private functions
+source $zsh_folder/private.sh
 
 # Merge PDFs
 function pdfmerge {
@@ -332,3 +336,17 @@ function ansible-decrypt-from-clipboard {
   xclip -o | ansible-vault decrypt -
 }
 
+function datetime {
+    date +"%H:%M:%S"
+}
+
+alias peribolos-check="podman run -it -v .:/mnt:Z --entrypoint /peribolos gcr.io/k8s-prow/peribolos:latest --config-path /mnt/github-config.yaml --github-token-path /mnt/token --min-admins=2 --maximum-removal-delta=0.15 --require-self=true --fix-org --fix-org-members --fix-repos --fix-teams --fix-team-members --fix-team-repos --allow-repo-archival"
+function peribolos-dump {
+    podman run -it -v .:/mnt:Z --entrypoint /peribolos gcr.io/k8s-prow/peribolos:latest --dump $1 --github-token-path /mnt/token | tee ./github-config.yaml
+}
+
+function work {
+    kstart5 --maximize slack
+    kstart5 chromium --profile-directory="Profile 1"
+    kstart5 spotify 
+}
