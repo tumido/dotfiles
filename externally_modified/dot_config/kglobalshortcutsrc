@@ -30,7 +30,7 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
-{0cd607c7-4e21-48ef-89f7-1e8519089d92}=Ctrl+Alt+T,none,Konsole
+{0cd607c7-4e21-48ef-89f7-1e8519089d92}=none,none,Konsole
 {13cf7a93-9bae-4864-b6f6-dbe09e1b548a}=none,none,Take screenshot with delay
 {32eeef66-9df9-4ff0-8bca-9c80941d74b2}=none,none,Take full-screen screenshot and save
 {465ccc03-5ded-4a38-8e98-949edab4eb9d}=none,none,Launch Konsole
@@ -39,7 +39,7 @@ _k_friendly_name=Custom Shortcuts Service
 {7a4033b1-f641-4dab-9c4e-78bf3fa0ea8c}=Shift+Print,none,Take full-screen screenshot and copy it to clipboard
 {89f06546-9288-4065-99b2-8cb8ba99b0d3}=Ctrl+F5,none,Min Brightness
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
-{f5caa8ac-29b8-4d2a-bbb9-c2998eb7bb7f}=Ctrl+Alt+H,none,Dolphin
+{f5caa8ac-29b8-4d2a-bbb9-c2998eb7bb7f}=none,none,Dolphin
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -65,15 +65,18 @@ _k_friendly_name=Session Management
 
 [kwin]
 Activate Window Demanding Attention=none,Meta+Ctrl+A,Activate Window Demanding Attention
-Decrease Opacity=none,,Decrease Opacity of Active Window by 5 %
+Decrease Opacity=none,,Decrease Opacity of Active Window by 5%
+Edit Tiles=Meta+T,Meta+T,Toggle Tiles Editor
 Expose=none,Ctrl+F9,Toggle Present Windows (Current desktop)
 ExposeAll=Meta+F11\tLaunch (C),Ctrl+F10\tLaunch (C),Toggle Present Windows (All desktops)
 ExposeClass=Ctrl+F7,Ctrl+F7,Toggle Present Windows (Window class)
+ExposeClassCurrentDesktop=none,none,Toggle Present Windows (Window class on current desktop)
+Exquisite=Meta+D,none,Exquisite
 FlipSwitchAll=none,none,Toggle Flip Switch (All desktops)
 FlipSwitchCurrent=none,none,Toggle Flip Switch (Current desktop)
-Increase Opacity=none,,Increase Opacity of Active Window by 5 %
+Increase Opacity=none,,Increase Opacity of Active Window by 5%
 Invert=Meta+Ctrl+I,Meta+Ctrl+I,Toggle Invert Effect
-Invert Screen Colors=none,,Invert Screen Colors
+Invert Screen Colors=none,none,Invert Screen Colors
 InvertWindow=Meta+Ctrl+U,Meta+Ctrl+U,Toggle Invert Effect on Window
 KWin Script: Sticky Window Snapping: enable/disable=none,none,KWin Script: Sticky Window Snapping: enable/disable
 KWin Script: Sticky Window Snapping: enable/disable temporarily=Ctrl+Shift+S,none,KWin Script: Sticky Window Snapping: enable/disable temporarily
@@ -116,7 +119,7 @@ MoveZoomRight=none,none,Move Zoomed Area to Right
 MoveZoomUp=none,none,Move Zoomed Area Upwards
 Overview=Alt+F2,Meta+W,Toggle Overview
 Setup Window Shortcut=none,,Setup Window Shortcut
-Show Desktop=none,Meta+D,Show Desktop
+Show Desktop=none,Meta+D,Peek at Desktop
 ShowDesktopGrid=Meta+E,Meta+F8,Show Desktop Grid
 Suspend Compositing=Meta+F12,Alt+Shift+F12,Suspend Compositing
 Switch One Desktop Down=Ctrl+Alt+Down,Meta+Ctrl+Down,Switch One Desktop Down
@@ -159,6 +162,10 @@ Switch to Screen 4=none,,Switch to Screen 4
 Switch to Screen 5=none,,Switch to Screen 5
 Switch to Screen 6=none,,Switch to Screen 6
 Switch to Screen 7=none,,Switch to Screen 7
+Switch to Screen Above=none,,Switch to Screen Above
+Switch to Screen Below=none,,Switch to Screen Below
+Switch to Screen to the Left=none,,Switch to Screen to the Left
+Switch to Screen to the Right=none,,Switch to Screen to the Right
 Toggle Night Color=Favorites,none,Toggle Night Color
 Toggle Window Raise/Lower=none,,Toggle Window Raise/Lower
 ToggleCurrentThumbnail=Meta+Ctrl+T,Meta+Ctrl+T,Toggle Thumbnail for Current Window
@@ -188,12 +195,16 @@ Window Maximize Vertical=none,,Maximize Window Vertically
 Window Minimize=none,Meta+PgDown,Minimize Window
 Window Move=none,,Move Window
 Window Move Center=none,,Move Window to the Center
-Window No Border=none,,Hide Window Border
+Window No Border=none,,Toggle Window Titlebar and Frame
 Window On All Desktops=none,,Keep Window on All Desktops
 Window One Desktop Down=Meta+Down,Meta+Ctrl+Shift+Down,Window One Desktop Down
 Window One Desktop Up=Meta+Up,Meta+Ctrl+Shift+Up,Window One Desktop Up
 Window One Desktop to the Left=Meta+Left,Meta+Ctrl+Shift+Left,Window One Desktop to the Left
 Window One Desktop to the Right=Meta+Right,Meta+Ctrl+Shift+Right,Window One Desktop to the Right
+Window One Screen Down=none,,Window One Screen Down
+Window One Screen Up=none,,Window One Screen Up
+Window One Screen to the Left=none,,Window One Screen to the Left
+Window One Screen to the Right=none,,Window One Screen to the Right
 Window Operations Menu=none,Alt+F3,Window Operations Menu
 Window Pack Down=none,,Move Window Down
 Window Pack Left=none,,Move Window Left
@@ -236,6 +247,7 @@ Window to Next Desktop=none,,Window to Next Desktop
 Window to Next Screen=Meta+Ctrl+Right,Meta+Shift+Right,Window to Next Screen
 Window to Previous Desktop=none,,Window to Previous Desktop
 Window to Previous Screen=Meta+Ctrl+Left,Meta+Shift+Left,Window to Previous Screen
+Window to Screen %1=none,none,Switch to Screen 7
 Window to Screen 0=none,,Window to Screen 0
 Window to Screen 1=none,,Window to Screen 1
 Window to Screen 2=none,,Window to Screen 2
@@ -246,7 +258,7 @@ Window to Screen 6=none,,Window to Screen 6
 Window to Screen 7=none,,Window to Screen 7
 _k_friendly_name=KWin
 view_actual_size=none,Meta+0,Zoom to Actual Size
-view_zoom_in=Meta+=,Meta+=,Zoom In
+view_zoom_in=Meta+=,Meta++,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
 
 [mediacontrol]
@@ -262,18 +274,22 @@ stopmedia=Media Stop,Media Stop,Stop media playback
 
 [org.kde.dolphin.desktop]
 _k_friendly_name=Dolphin
-_launch=none,Meta+E,Dolphin
+_launch=Ctrl+Alt+H,Meta+E,Dolphin
+
+[org.kde.kcalc.desktop]
+_k_friendly_name=KCalc
+_launch=Launch (1),Launch (1),KCalc
 
 [org.kde.konsole.desktop]
 NewTab=none,none,Open a New Tab
 NewWindow=none,none,Open a New Window
 _k_friendly_name=Konsole
-_launch=none,none,Konsole
+_launch=Ctrl+Alt+T,none,Konsole
 
 [org.kde.krunner.desktop]
 RunClipboard=none,Alt+Shift+F2,Run command on clipboard contents
 _k_friendly_name=KRunner
-_launch=Alt+Space\tSearch,none,KRunner
+_launch=Alt+Shift+F2\tAlt+Space\tSearch,none,KRunner
 
 [org.kde.plasma.emojier.desktop]
 _k_friendly_name=Emoji Selector
@@ -320,7 +336,7 @@ previous activity=Meta+Shift+Tab,Meta+Shift+Tab,Walk through activities (Reverse
 repeat_action=Ctrl+Alt+R,Meta+Ctrl+R,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
 show-barcode=Meta+B,,Show Barcode…
-show-on-mouse-pos=none,Meta+V,Open Klipper at Mouse Position
+show-on-mouse-pos=none,Meta+V,Show Items at Mouse Position
 stop current activity=Meta+S,Meta+S,Stop Current Activity
 switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity

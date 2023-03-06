@@ -41,6 +41,7 @@
 [alias]
   root = rev-parse --show-toplevel
   default-branch = "!f() { basename $(git rev-parse --abbrev-ref origin/HEAD); }; f"
+  set-main = "!f() { git symbolic-ref origin/HEAD refs/remotes/origin/$1; }; f"
 
   out = log --branches --not --remotes
   in = pull --dry-run
@@ -99,8 +100,7 @@
   a = add -u -v
 
   lg = "log --graph --full-history --all --pretty=format:'%C(#ffaa00)%h%Creset —— %C(magenta)%G? %C(bold blue)%an%Creset: %s %C(green)%ar%Creset %C(red)%d%Creset' --abbrev-commit --date=relative"
-  cleanup-origin = "!git branch -r --merged | awk '/origin/ && !/master/ && !/main/' | sed 's/origin\\///' | xargs -r -n 1 git push --delete origin"
-  cleanup-local = "!git branch --merged | grep -vP '(master)|(main)' | xargs -r -n 1 git branch -d"
+  cleanup = "!f() { git-delete-merged-branches \"$@\"; }; f"
   update = "!git fum && git com && git rb upstream/$(git default-branch) && git p"
 
   # cotc = !git sttc | xargs git checkout
