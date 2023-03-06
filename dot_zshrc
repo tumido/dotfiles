@@ -91,8 +91,7 @@ eval "$(starship init zsh)"
 # Bundles
 # Before sourcing
 plugins=(fzf nvm command-not-found sudo man colored-man-pages colorize dirhistory copybuffer magic-enter cp dotenv)
-#export NVM_LAZY=1
-export NVM_AUTOLOAD=1
+zstyle ':omz:plugins:nvm' autoload true
 
 source $zsh_folder/bundle.sh
 
