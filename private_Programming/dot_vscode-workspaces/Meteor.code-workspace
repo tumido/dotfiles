@@ -1,0 +1,24 @@
+{
+    "folders": [
+        {
+            "path": "/home/tcoufal/Programming/AI-CoE/aicoe/meteor",
+            "name": "Meteor"
+        },
+        {
+            "path": "../../.go/src/github.com/aicoe/meteor-operator"
+        },
+        {
+            "path": "../AI-CoE/thoth-station/helm-charts"
+        },
+        {
+            "path": "../AI-CoE/open-services/byon"
+        },
+        {
+            "path": "../AI-CoE/odh/dashboard"
+        }
+    ],
+    "settings": {
+        "svg.preview.background": "transparent",
+        "extensions.ignoreRecommendations": true
+    }
+}

@@ -1,13 +1,27 @@
 {
 	"folders": [
 		{
+			"name": "AiCoE CD",
 			"path": "../AI-CoE/sre/aicoe-cd"
 		},
 		{
+			"name": "AiCoE CI",
 			"path": "../AI-CoE/sre/aicoe-ci"
 		},
 		{
-			"path": "../AI-CoE/sre/odh-manifests"
+			"name": "Upstream ODH",
+			"path": "../AI-CoE/odh/manifests"
+		},
+		{
+			"name": "Downstream IDH",
+			"path": "../AI-CoE/sre/idh-manifests"
+		},
+		{
+			"name": "Operate First ODH",
+			"path": "../AI-CoE/operate-first/odh"
+		},
+		{
+			"path": "../AI-CoE/operate-first/continuous-deployment"
 		}
 	],
 	"settings": {}

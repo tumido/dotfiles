@@ -1,12 +1,11 @@
 {
 	"folders": [
 		{
-			"path": "../AI-CoE/aiops/sync-pipelines"
-		},
-		{
-			"path": "../AI-CoE/gitlab/dh-argo-workflows"
+			"name": "Sync Pipelines",
+			"path": "../AI-CoE/aicoe-aiops/sync-pipelines"
 		}
 	],
 	"settings": {
+		"python.testing.pytestEnabled": true
 	}
 }

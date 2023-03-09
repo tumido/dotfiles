@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "../AI-CoE/aiops/project-template",
+			"name": "Project template"
+		},
+		{
+			"path": "../AI-CoE/aiops/data-science-workflows",
+			"name": "Data science workflows"
+		},
+		{
+			"path": "../AI-CoE/aiops/openshift-sme-topic-modeling",
+			"name": "Openshift SME mailing list"
+		},
+		{
+			"path": "../AI-CoE/aiops/mailing-list-analysis-toolkit",
+			"name": "Fedora mailing list"
+		},
+		{
+			"path": "../AI-CoE/gitlab/insights-rules-statistics",
+			"name": "Insights rules statistics"
+		},
+		{
+			"path": "../AI-CoE/sre/idh-manifests"
+		}
+	],
+	"settings": {
+		"python.testing.pytestEnabled": false,
+		"python.dataScience.jupyterServerURI": "local",
+		"jupyter.jupyterServerType": "local"
+	}
+}

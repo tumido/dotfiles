@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Festival Kávy",
+			"path": "../baristalive/festivalkavy"
+		},
+		{
+			"name": "Baristalive",
+			"path": "../baristalive/baristalive"
+		},
+		{
+			"name": "Lamasklama",
+			"path": "../baristalive/lamasklama"
+		}
+	],
+	"settings": {}
+}

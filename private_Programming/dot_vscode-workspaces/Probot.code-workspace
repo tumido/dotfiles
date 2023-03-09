@@ -1,0 +1,24 @@
+{
+    "folders": [
+        {
+            "name": "Peribolos",
+            "path": "/home/tcoufal/Programming/AI-CoE/operate-first/peribolos-as-a-service"
+        },
+        {
+            "name": "Extensions",
+            "path": "/home/tcoufal/Programming/AI-CoE/operate-first/probot-extensions"
+        },
+        {
+            "name": "Template",
+            "path": "/home/tcoufal/Programming/AI-CoE/operate-first/probot-template"
+        },
+        {
+            "name": "Robozome",
+            "path": "../AI-CoE/operate-first/robozome"
+        },
+        {
+            "path": "../chatbot"
+        }
+    ],
+    "settings": {}
+}

@@ -1,0 +1,17 @@
+{
+    "folders": [
+        {
+            "path": "/home/tcoufal/Programming/igors"
+        }
+    ],
+    "settings": {
+        "python.defaultInterpreterPath": "/home/tcoufal/.local/share/virtualenvs/igors-KwjpWMVV/bin/python",
+        "editor.formatOnSave": true,
+        "[typescript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescriptreact]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+    }
+}
