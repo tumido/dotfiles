@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../AI-CoE/operate-first/apps",
+			"name": "Application manifests"
+		},
+		{
+			"path": "../AI-CoE/operate-first/blueprint",
+			"name": "Blueprints"
+		},
+		{
+			"path": "../AI-CoE/operate-first/service-catalog"
+		},
+		{
+			"path": "../AI-CoE/operate-first/schema-store"
+		},
+		{
+			"path": "../AI-CoE/operate-first/dns"
+		},
+		{
+			"path": "../AI-CoE/operate-first/gcloud"
+		}
+	],
+	"settings": {
+		"python.dataScience.jupyterServerURI": "local",
+		"git.ignoreLimitWarning": true
+	}
+}

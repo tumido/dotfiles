@@ -1,0 +1,14 @@
+{
+    "folders": [
+        {
+            "path": "/home/tcoufal/Programming/vscode-yaml"
+        },
+        {
+            "path": "../yaml-language-server"
+        },
+        {
+            "path": "../prettier"
+        }
+    ],
+    "settings": {}
+}

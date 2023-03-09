@@ -1,0 +1,21 @@
+{
+    "folders": [
+        {
+            "path": "/home/tcoufal/Programming/AI-CoE/odh/manifests",
+            "name": "ODH Manifests"
+        },
+        {
+            "path": "/home/tcoufal/Programming/AI-CoE/odh/dashboard",
+            "name": "Dashboard"
+        },
+        {
+            "path": "../AI-CoE/gitlab/opendatahub-images",
+            "name": "Images"
+        },
+        {
+            "path": "../AI-CoE/kubeflow/manifests",
+            "name": "Kubeflow"
+        }
+    ],
+    "settings": {}
+}

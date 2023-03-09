@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "/home/tcoufal/Programming/malenovska"
+		},
+		{
+			"path": "../malenovska-functions"
 		}
 	],
 	"settings": {
