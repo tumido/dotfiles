@@ -1,3 +1,14 @@
 LICENSE
 README.md
 externally_modified
+{{ if eq .chezmoi.os "darwin" }}
+Workspace
+**/.directory
+.local
+.config
+Vaults
+{{ end }}
+
+{{ if eq .chezmoi.os "linux" }}
+
+{{ end }}
