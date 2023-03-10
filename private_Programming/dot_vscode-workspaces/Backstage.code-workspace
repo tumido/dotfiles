@@ -1,35 +1,35 @@
 {
     "folders": [
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/janus-idp/helm-backstage",
+            "path": "../AI-CoE/janus-idp/helm-backstage",
             "name": "[OLD] Helm Chart"
         },
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/janus-idp/redhat-backstage-build",
+            "path": "../AI-CoE/janus-idp/redhat-backstage-build",
             "name": "Red Hat Official Build"
         },
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/operate-first/service-catalog",
+            "path": "../AI-CoE/operate-first/service-catalog",
             "name": "Operate First: Backstage"
         },
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/operate-first/apps/service-catalog",
+            "path": "../AI-CoE/operate-first/apps/service-catalog",
             "name": "Operate First: Service Catalog"
         },
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/janus-idp/backstage-plugins",
+            "path": "../AI-CoE/janus-idp/backstage-plugins",
             "name": "Janus: Plugins"
         },
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/janus-idp/backstage",
+            "path": "../AI-CoE/janus-idp/backstage",
             "name": "Backstage"
         },
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/janus-idp/charts",
+            "path": "../AI-CoE/janus-idp/charts",
             "name": "Chart"
         },
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/janus-idp/webterminal-proxy"
+            "path": "../AI-CoE/janus-idp/webterminal-proxy"
         }
     ],
     "settings": {}

@@ -1,11 +1,11 @@
 {
     "folders": [
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/odh/manifests",
+            "path": "../AI-CoE/odh/manifests",
             "name": "ODH Manifests"
         },
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/odh/dashboard",
+            "path": "../AI-CoE/odh/dashboard",
             "name": "Dashboard"
         },
         {

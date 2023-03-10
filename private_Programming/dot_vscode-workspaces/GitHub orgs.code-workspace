@@ -1,11 +1,11 @@
 {
     "folders": [
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/aicoe/common",
+            "path": "../AI-CoE/aicoe/common",
             "name": "AICoE"
         },
         {
-            "path": "/home/tcoufal/Programming/AI-CoE/operate-first/common",
+            "path": "../AI-CoE/operate-first/common",
             "name": "Operate First"
         },
         {
