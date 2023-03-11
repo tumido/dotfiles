@@ -6,6 +6,7 @@ Workspace
 **/.directory
 .local
 .config
+!.config/starship.toml
 Vaults
 {{ end }}
 
