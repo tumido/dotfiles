@@ -5,7 +5,7 @@ externally_modified
 Workspace
 **/.directory
 .local
-.config
+.config/*
 !.config/starship.toml
 Vaults
 {{ end }}
