@@ -37,7 +37,7 @@ bindkey -e
 #zstyle ':completion:*:*:*:*:hosts' list-colors '=*=31'
 #zstyle ':completion:*:*:*:*:users' list-colors '=*=32'
 # LS_COLORS
-eval $(dircolors -b $zsh_folder/LS_COLORS)
+# eval $(dircolors -b $zsh_folder/LS_COLORS)
 # Git don't show remote branches
 #zstyle ':completion::complete:git-checkout:argument-rest:headrefs' command "git for-each-ref --format='%(refname)' refs/heads 2>/dev/null"
 # This speeds up pasting w/ autosuggest
