@@ -1,5 +1,7 @@
 Host *
     IdentitiesOnly yes
+    UseKeychain yes
+    AddKeysToAgent yes
 
 Host turris
     User root
