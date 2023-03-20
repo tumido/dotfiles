@@ -88,6 +88,9 @@ zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|
 # PROMT THEME
 eval "$(starship init zsh)"
 
+# Mac GPG tty (https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e)
+export GPG_TTY=$(tty)
+
 # Bundles
 # Before sourcing
 plugins=(fzf nvm command-not-found sudo man colored-man-pages colorize dirhistory copybuffer magic-enter cp dotenv)

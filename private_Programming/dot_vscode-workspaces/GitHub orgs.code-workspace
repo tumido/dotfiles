@@ -1,31 +1,31 @@
 {
     "folders": [
         {
-            "path": "../AI-CoE/aicoe/common",
+            "path": "../aicoe/common",
             "name": "AICoE"
         },
         {
-            "path": "../AI-CoE/operate-first/common",
+            "path": "../operate-first/common",
             "name": "Operate First"
         },
         {
-            "path": "../AI-CoE/aicoe-aiops/common",
+            "path": "../aicoe-aiops/common",
             "name": "AICoE - AIOps"
         },
         {
-            "path": "../AI-CoE/thoth-station/core",
+            "path": "../thoth-station/core",
             "name": "Thoth Station"
         },
         {
-            "path": "../AI-CoE/open-services/community",
+            "path": "../open-services/community",
             "name": "Open Services Group"
         },
         {
-            "path": "../AI-CoE/thoth-station/thoth-application/prow/overlays/smaug",
+            "path": "../thoth-station/thoth-application/prow/overlays/smaug",
             "name": "Prow config"
         },
         {
-            "path": "../AI-CoE/janus-idp/github",
+            "path": "../janus-idp/github",
             "name": "Janus IDP"
         }
     ],
