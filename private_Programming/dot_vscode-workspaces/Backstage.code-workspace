@@ -1,35 +1,39 @@
 {
     "folders": [
         {
-            "path": "../AI-CoE/janus-idp/helm-backstage",
+            "path": "../janus-idp/helm-backstage",
             "name": "[OLD] Helm Chart"
         },
         {
-            "path": "../AI-CoE/janus-idp/redhat-backstage-build",
+            "path": "../janus-idp/redhat-backstage-build",
             "name": "Red Hat Official Build"
         },
         {
-            "path": "../AI-CoE/operate-first/service-catalog",
+            "path": "../operate-first/service-catalog",
             "name": "Operate First: Backstage"
         },
         {
-            "path": "../AI-CoE/operate-first/apps/service-catalog",
+            "path": "../operate-first/apps/service-catalog",
             "name": "Operate First: Service Catalog"
         },
         {
-            "path": "../AI-CoE/janus-idp/backstage-plugins",
+            "path": "../janus-idp/backstage-plugins",
             "name": "Janus: Plugins"
         },
         {
-            "path": "../AI-CoE/janus-idp/backstage",
+            "path": "../janus-idp/backstage",
             "name": "Backstage"
         },
         {
-            "path": "../AI-CoE/janus-idp/charts",
+            "path": "../janus-idp/charts",
             "name": "Chart"
         },
         {
-            "path": "../AI-CoE/janus-idp/webterminal-proxy"
+            "path": "../janus-idp/webterminal-proxy"
+        },
+        {
+            "name": "Janus: .github",
+            "path": "../janus-idp/github"
         }
     ],
     "settings": {}
