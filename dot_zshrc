@@ -158,6 +158,12 @@ export CHROME_EXECUTABLE=chromium
 
 # Init additional completions
 fpath+="$zsh_folder/zfunc"
+
+#if type brew &>/dev/null
+#then
+#  fpath="$(brew --prefix)/share/zsh/site-functions:${fpath}"
+#fi
+
 compdef _pipenv pipenv
 compdef _gh gh
 compctl -K _pip_completion pip
@@ -207,6 +213,7 @@ alias t="PIPENV_DONT_LOAD_ENV=1 pipenv run pytest --pylama ."
 alias dotenv="set -a; source ./.env; set +a;"
 alias c="code ."
 alias v="code ."
+alias p="pushd ..;popd"
 alias gh="PAGER=cat gh"
 
 # FUNCTIONS
@@ -352,3 +359,4 @@ function work {
     kstart5 chromium --profile-directory="Profile 1"
     kstart5 spotify 
 }
+
