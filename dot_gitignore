@@ -16,3 +16,4 @@ __pycache__
 kustomize
 
 token
+.python-version

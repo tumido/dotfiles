@@ -2,7 +2,7 @@
     "folders": [
         {
             "path": "../janus-idp/helm-backstage",
-            "name": "[OLD] Helm Chart"
+            "name": "Janus: Chart"
         },
         {
             "path": "../janus-idp/redhat-backstage-build",
@@ -34,6 +34,21 @@
         {
             "name": "Janus: .github",
             "path": "../janus-idp/github"
+        },
+        {
+            "path": "../janus-idp/backstage-showcase",
+            "name": "Showcase"
+        },
+        {
+            "path": "../janus-idp/janus-idp.io",
+            "name": "Website"
+        },
+        {
+            "path": "../janus-idp/showcase-e2e",
+            "name": "E2E"
+        },
+        {
+            "path": "../rhidp/productization"
         }
     ],
     "settings": {}

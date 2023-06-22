@@ -8,19 +8,21 @@ symbol = " "
 
 [character]
 success_symbol = "[](bold fg:208)"
+error_symbol = "[](bold red)"
 
 [dart]
 symbol = " "
 format = "[$symbol($version )]($style)"
 
 [directory]
-read_only = " "
+read_only = " "
 truncate_to_repo = false
 truncation_symbol = "…/"
 style = "blue"
+repo_root_style = "underline blue"
 
 [docker_context]
-symbol = " "
+symbol = "󰡨 "
 
 [elixir]
 symbol = " "
@@ -32,19 +34,21 @@ symbol = " "
 disabled = true
 
 [git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
 symbol = " "
+ignore_branches = ["main", "master"]
 
 [git_status]
 format = '([$all_status$ahead_behind]($style))'
-ahead = "$count "
-behind = "$count "
+ahead = "$count "
+behind = "$count "
 diverged = "$count "
-untracked = "$count "
+untracked = "?$count "
 stashed = "$count "
 modified = "$count "
 staged = "$count "
 renamed = "$count "
-deleted = "$count "
+deleted = "$count "
 conflicted = "$count "
 
 [golang]
@@ -64,10 +68,10 @@ symbol = " "
 disabled = true
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛"
 
 [nim]
-symbol = " "
+symbol = "󰆥"
 
 [nix_shell]
 symbol = " "
@@ -77,7 +81,7 @@ format = "[$symbol($version )]($style)"
 symbol = " "
 
 [package]
-symbol = " "
+symbol = " "
 format = "[$symbol$version]($style) "
 display_private = true
 
@@ -102,13 +106,16 @@ symbol = " "
 
 [status]
 symbol = ""
-format = '[$symbol$common_meaning$signal_name$maybe_int]($style)'
+format = '[$symbol$common_meaning$signal_name$maybe_int ]($style)'
 disabled = false
 recognize_signal_code = true
 map_symbol = true
 not_executable_symbol = " "
-not_found_symbol = " "
-sigint_symbol = "ﳼ "
+not_found_symbol = "󰍉 "
+sigint_symbol = "󰟾 "
 
 [swift]
-symbol = "ﯣ "
+symbol = " "
+
+[cmd_duration]
+format = "[ $duration]($style) "
