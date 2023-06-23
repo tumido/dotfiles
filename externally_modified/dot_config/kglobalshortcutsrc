@@ -30,10 +30,9 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
-{0cd607c7-4e21-48ef-89f7-1e8519089d92}=none,none,Konsole
+{0cd607c7-4e21-48ef-89f7-1e8519089d92}=Ctrl+Alt+T,none,Konsole
 {13cf7a93-9bae-4864-b6f6-dbe09e1b548a}=none,none,Take screenshot with delay
 {32eeef66-9df9-4ff0-8bca-9c80941d74b2}=none,none,Take full-screen screenshot and save
-{465ccc03-5ded-4a38-8e98-949edab4eb9d}=none,none,Launch Konsole
 {550679a7-6038-4d71-9d70-045dee9e7ad0}=Print,none,Take screenshot
 {79dfe584-0eef-4fa7-9bd5-6d13234d8d0b}=Ctrl+F6,none,Max Brightness
 {7a4033b1-f641-4dab-9c4e-78bf3fa0ea8c}=Shift+Print,none,Take full-screen screenshot and copy it to clipboard
@@ -284,7 +283,7 @@ _launch=Launch (1),Launch (1),KCalc
 NewTab=none,none,Open a New Tab
 NewWindow=none,none,Open a New Window
 _k_friendly_name=Konsole
-_launch=Ctrl+Alt+T,none,Konsole
+_launch=none,none,Konsole
 
 [org.kde.krunner.desktop]
 RunClipboard=none,Alt+Shift+F2,Run command on clipboard contents

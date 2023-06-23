@@ -1,5 +1,5 @@
 [$Version]
-update_info=spectacle_shortcuts.upd:spectacle-migrate-shortcuts,konsole_globalaccel.upd:konsole_globalaccel
+update_info=spectacle_shortcuts.upd:spectacle-migrate-shortcuts,konsole_globalaccel.upd:konsole_globalaccel,konsole.upd:konsole_globalaccel
 
 [ColorEffects:Disabled]
 ChangeSelectionColor[$d]
@@ -102,7 +102,7 @@ DataCount=5
 
 [Data_1]
 Comment=KMenuEdit Global Shortcuts
-DataCount=2
+DataCount=1
 Enabled=true
 Name=KMenuEdit
 SystemGroup=1
@@ -137,32 +137,6 @@ TriggersCount=1
 Key=
 Type=SHORTCUT
 Uuid={d03619b6-9b3c-48cc-9d9c-a2aadb485550}
-
-[Data_1_2]
-Comment=Global keyboard shortcut to launch Konsole
-Enabled=true
-Name=Launch Konsole
-Type=MENUENTRY_SHORTCUT_ACTION_DATA
-
-[Data_1_2Actions]
-ActionsCount=1
-
-[Data_1_2Actions0]
-CommandURL=org.kde.konsole.desktop
-Type=MENUENTRY
-
-[Data_1_2Conditions]
-Comment=
-ConditionsCount=0
-
-[Data_1_2Triggers]
-Comment=Simple_action
-TriggersCount=1
-
-[Data_1_2Triggers0]
-Key=
-Type=SHORTCUT
-Uuid={465ccc03-5ded-4a38-8e98-949edab4eb9d}
 
 [Data_2]
 Comment=Basic Konqueror gestures.
@@ -1041,7 +1015,7 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_4_2Triggers0]
-Key=
+Key=Ctrl+Alt+T
 Type=SHORTCUT
 Uuid={0cd607c7-4e21-48ef-89f7-1e8519089d92}
 
