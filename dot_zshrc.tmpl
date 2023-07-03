@@ -143,6 +143,15 @@ export PATH="$HOME/.poetry/bin:$PATH"
 export GOPATH="$HOME/.go"
 export PATH="${GOPATH//://bin:}/bin:$PATH"
 
+# Set up Flutter
+export FVM_HOME="~/.fvm"
+export PATH=$PATH:"~/.fvm/default/bin"
+
+{{ if eq .chezmoi.os "linux" -}}
+# Set Chromium for Flutter
+export CHROME_EXECUTABLE=chromium
+{{ end -}}
+
 # Set editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -152,9 +161,6 @@ export PATH="$PATH:$HOME/.krew/bin"
 
 # Set sudo prompt
 export SUDO_PROMPT="💬🔑 "
-
-# Set Chromium for Flutter
-export CHROME_EXECUTABLE=chromium
 
 # Init additional completions
 fpath+="$zsh_folder/zfunc"
