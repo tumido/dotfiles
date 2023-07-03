@@ -49,6 +49,9 @@
         },
         {
             "path": "../rhidp/productization"
+        },
+        {
+            "path": "../janus-idp/operator2"
         }
     ],
     "settings": {}
