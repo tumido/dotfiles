@@ -11,6 +11,9 @@
 		{
 			"name": "Lamasklama",
 			"path": "../baristalive/lamasklama"
+		},
+		{
+			"path": "../baristalive/roastfestival"
 		}
 	],
 	"settings": {}
