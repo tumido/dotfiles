@@ -145,7 +145,7 @@ export PATH="${GOPATH//://bin:}/bin:$PATH"
 
 # Set up Flutter
 export FVM_HOME="~/.fvm"
-export PATH=$PATH:"~/.fvm/default/bin"
+export PATH="~/.fvm/default/bin:$PATH"
 
 {{ if eq .chezmoi.os "linux" -}}
 # Set Chromium for Flutter

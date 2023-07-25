@@ -52,6 +52,9 @@
         },
         {
             "path": "../janus-idp/operator2"
+        },
+        {
+            "path": "../janus-idp/test"
         }
     ],
     "settings": {}
