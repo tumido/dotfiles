@@ -1,61 +1,33 @@
 {
     "folders": [
         {
-            "path": "../janus-idp/helm-backstage",
-            "name": "Janus: Chart"
+            "name": "Chart: Janus",
+            "path": "../janus-idp/helm-backstage"
         },
         {
-            "path": "../janus-idp/redhat-backstage-build",
-            "name": "Red Hat Official Build"
+            "name": "Chart: Upstream",
+            "path": "../janus-idp/charts"
         },
         {
-            "path": "../operate-first/service-catalog",
-            "name": "Operate First: Backstage"
+            "name": "Showcase",
+            "path": "../janus-idp/showcase"
         },
         {
-            "path": "../operate-first/apps/service-catalog",
-            "name": "Operate First: Service Catalog"
+            "name": "Plugins",
+            "path": "../janus-idp/plugins"
         },
         {
-            "path": "../janus-idp/backstage-plugins",
-            "name": "Janus: Plugins"
-        },
-        {
-            "path": "../janus-idp/backstage",
-            "name": "Backstage"
-        },
-        {
-            "path": "../janus-idp/charts",
-            "name": "Chart"
-        },
-        {
-            "path": "../janus-idp/webterminal-proxy"
-        },
-        {
-            "name": "Janus: .github",
-            "path": "../janus-idp/github"
-        },
-        {
-            "path": "../janus-idp/backstage-showcase",
-            "name": "Showcase"
-        },
-        {
-            "path": "../janus-idp/janus-idp.io",
-            "name": "Website"
-        },
-        {
-            "path": "../janus-idp/showcase-e2e",
-            "name": "E2E"
-        },
-        {
+            "name": "Productization",
             "path": "../rhidp/productization"
-        },
-        {
-            "path": "../janus-idp/operator2"
-        },
-        {
-            "path": "../janus-idp/test"
         }
     ],
-    "settings": {}
+    "settings": {
+        "jest.disabledWorkspaceFolders": [
+            "Chart: Janus",
+            "Productization",
+            "Chart: Upstream"
+        ],
+        "jest.jestCommandLine": "npx backstage-cli package test --silent=false",
+        "jest.showCoverageOnLoad": false,
+    }
 }

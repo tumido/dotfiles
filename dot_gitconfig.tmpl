@@ -101,7 +101,7 @@
 
   lg = "log --graph --full-history --all --pretty=format:'%C(#ffaa00)%h%Creset —— %C(magenta)%G? %C(bold blue)%an%Creset: %s %C(green)%ar%Creset %C(red)%d%Creset' --abbrev-commit --date=relative"
   cleanup = "!f() { git-delete-merged-branches \"$@\"; }; f"
-  update = "!git fum && git com && git rb upstream/$(git default-branch) && git p"
+  update = "!git fum && HUSKY=0 git com && git rb upstream/$(git default-branch) && git p"
 
   # cotc = !git sttc | xargs git checkout
   # como = !git stmo | xargs git checkout
