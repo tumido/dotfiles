@@ -16,5 +16,9 @@
 			"path": "../baristalive/roastfestival"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"*.css": "tailwindcss"
+		}
+	}
 }
