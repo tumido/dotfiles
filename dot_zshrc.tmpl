@@ -155,6 +155,9 @@ export CHROME_EXECUTABLE=chromium
 # Set editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
 
 # Set krew plugins
 export PATH="$PATH:$HOME/.krew/bin"
@@ -164,6 +167,7 @@ export SUDO_PROMPT="💬🔑 "
 
 # Init additional completions
 fpath+="$zsh_folder/zfunc"
+autoload -Uz compinit && compinit
 
 #if type brew &>/dev/null
 #then
@@ -173,7 +177,6 @@ fpath+="$zsh_folder/zfunc"
 compdef _pipenv pipenv
 compdef _gh gh
 compctl -K _pip_completion pip
-
 
 # COMPLETION
 # Dkms
@@ -321,8 +324,12 @@ function src {
         zrecompile -p $f && command rm -f $f.zwc.old
     done
 
+    kubectl completion zsh > $zsh_folder/zfunc/_kubectl
+    oc completion zsh > $zsh_folder/zfunc/_oc
+    
     # Use $SHELL if available; remove leading dash if login shell
     [[ -n "$SHELL" ]] && exec ${SHELL#-} || exec zsh
+
 }
 
 function magnet {
@@ -366,3 +373,11 @@ function work {
     kstart5 spotify 
 }
 
+function nodes {
+    cmd="kubectl get nodes -o=jsonpath='{range .items[*]}{.metadata.name},{.metadata.annotations.machine\.openshift\.io\/machine},{.metadata.labels.topology\.ebs\.csi\.aws\.com\/zone},{.metadata.labels.node\.kubernetes\.io\/instance-type},{.metadata.labels.nvidia\.com\/gpu\.product}{\"\n\"}{end}' | column -s, -t"
+    if [ "$1" == "-w" ]; then
+        watch $cmd
+    else
+        eval $cmd
+    fi
+}
