@@ -1,24 +1,15 @@
 {
 	"folders": [
 		{
-			"name": "Festival Kávy",
-			"path": "../baristalive/festivalkavy"
-		},
-		{
-			"name": "Baristalive",
-			"path": "../baristalive/baristalive"
-		},
-		{
-			"name": "Lamasklama",
-			"path": "../baristalive/lamasklama"
-		},
-		{
 			"path": "../baristalive/roastfestival"
 		}
 	],
 	"settings": {
 		"files.associations": {
 			"*.css": "tailwindcss"
-		}
+		},
+		"github-actions.workflows.pinned.workflows": [
+			".github/workflows/firebase-hosting-merge.yml"
+		]
 	}
 }
