@@ -381,3 +381,10 @@ function nodes {
         eval $cmd
     fi
 }
+
+function pvc-debug {
+    yq ".spec.volumes.0.persistentVolumeClaim.claimName=\"$1\"" $zsh_folder/pvc-debug.yaml | oc apply -f -
+    oc wait --for=jsonpath='{.status.phase}'=Running pod/pvc-debug-tumido
+    oc exec -it pvc-debug-tumido -- /bin/bash
+    oc delete pod pvc-debug-tumido
+}

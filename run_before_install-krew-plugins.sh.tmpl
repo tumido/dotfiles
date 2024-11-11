@@ -1,0 +1,14 @@
+#!/bin/bash
+
+kubectl krew update
+kubectl krew index add kubectl-ai https://github.com/sozercan/kubectl-ai
+
+kubectl krew install <<EOF
+operator
+view-secret
+view-cert
+kubectl-ai/kubectl-ai
+EOF
+
+kubectl krew upgrade
+
