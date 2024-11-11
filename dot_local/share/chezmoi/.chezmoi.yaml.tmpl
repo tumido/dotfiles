@@ -1,0 +1,14 @@
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $name := promptStringOnce . "name" "Name" -}}
+{{- $keyid := promptStringOnce . "keyid" "GPG key ID" -}}
+
+data:
+  email: {{ $email | quote }}
+  name: {{ $name | quote }}
+  keyid: {{ $keyid | quote }}
+
+encryption: "gpg"
+gpg:
+  recipient: {{ $keyid | quote }}
+  args:
+  - "--quiet"
