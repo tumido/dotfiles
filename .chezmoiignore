@@ -10,6 +10,22 @@ Workspace
 Vaults
 {{ end }}
 
+{{ if eq .chezmoi.hostname "neem" }}
+**/.directory
+Workspace
+Documents
+Downloads
+Pictures
+Programming
+Vaults
+.scripts
+.pam_environment
+.local
+.config/*
+!.config/starship.toml
+Vaults
+{{ end }}
+
 {{ if eq .chezmoi.os "linux" }}
 
 {{ end }}
