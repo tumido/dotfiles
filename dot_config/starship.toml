@@ -119,3 +119,12 @@ symbol = " "
 
 [cmd_duration]
 format = "[ $duration]($style) "
+
+[hostname]
+trim_at = ''
+ssh_symbol = '🌐'
+format = '[$ssh_symbol$hostname]($style) '
+
+
+[username]
+format = '[$user]($style) '
