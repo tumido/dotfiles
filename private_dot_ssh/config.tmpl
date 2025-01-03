@@ -1,11 +1,14 @@
 Host *
     IdentitiesOnly yes
+{{- if eq .chezmoi.os "darwin" }}
     UseKeychain yes
+{{- end }}
     AddKeysToAgent yes
 
 Host turris
     User root
     HostName 192.168.0.1
+    IdentityFile ~/.ssh/turris_ed25519
     PreferredAuthentications publickey
 
 Host router cap1 cap2
@@ -14,21 +17,11 @@ Host router cap1 cap2
     IdentityFile ~/.ssh/mikrotik_rsa
     PreferredAuthentications publickey
 
-Host merlin eva
-    User xcoufa09
-    HostName  %h.fit.vutbr.cz
-    IdentityFile ~/.ssh/school_ed25519
+Host neem
+    User tumi
+    Hostname neem.lan
+    IdentityFile ~/.ssh/turris_ed25519
     PreferredAuthentications publickey
-
-Host jenkins
-    User root
-    HostName content-test-jenkins.rhev-ci-vms.eng.rdu2.redhat.com
-
-Host 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16
-    User root
-    HostName cloud-qe-16-vm-%h.idmqe.lab.eng.bos.redhat.com
-    StrictHostKeyChecking no
-    UserKnownHostsFile /dev/null
 
 Host code.engineering.redhat.com
     User tcoufal
