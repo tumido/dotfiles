@@ -164,7 +164,9 @@ export PATH="$PATH:$HOME/.krew/bin"
 
 # Update path for podman from podman.io
 export PATH=/opt/podman/bin:$PATH
+{{ if eq .chezmoi.os "darwin" -}}
 export CONTAINERS_MACHINE_PROVIDER=libkrun
+{{ end -}}
 
 # Set sudo prompt
 export SUDO_PROMPT="💬🔑 "
