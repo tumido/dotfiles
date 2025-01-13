@@ -20,8 +20,10 @@ Host router cap1 cap2
 Host neem
     User tumi
     Hostname neem.lan
+    ForwardAgent yes
     IdentityFile ~/.ssh/turris_ed25519
     PreferredAuthentications publickey
+    RemoteForward /run/user/1000/gnupg/S.gpg-agent /Users/tcoufal/.gnupg/S.gpg-agent.extra
 
 Host code.engineering.redhat.com
     User tcoufal
