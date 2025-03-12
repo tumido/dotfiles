@@ -5,7 +5,10 @@ category=${mime%%/*}
 kind=${mime##*/}
 
 if [ -d "$1" ]; then
-	exa --git -hl --color=always --icons "$1"
+	eza --git -hl --color=always --icons "$1"
+elif [ "$kind" = pdf ] || [ "$kind" = x-xcf ]; then
+	magick $1[0] jpeg:- | chafa - 
+	exiftool "$1"
 elif [ "$category" = image ]; then
 	chafa "$1"
 	exiftool "$1"
@@ -17,10 +20,8 @@ elif [ "$kind" = vnd.openxmlformats-officedocument.spreadsheetml.sheet ] || \
 	in2csv "$1" | xsv table | bat -ltsv --color=always
 elif [ "$category" = text ]; then
 	bat --color=always "$1"
-elif [ "$kind" = pdf ]; then
-	convert $1[0] jpeg:- | chafa - 
 else
 	#lesspipe.sh "$1" | bat --color=always
-	bat --color=always $1
+	bat --color=always "$1"
 fi
 # lesspipe.sh don't use exa, bat and chafa, it use ls and exiftool. so we create a lessfilter.

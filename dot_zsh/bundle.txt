@@ -6,3 +6,5 @@ mafredri/zsh-async
 zsh-users/zsh-syntax-highlighting
 Aloxaf/fzf-tab
 k-sriram/zsh-auto-venv
+lukechilds/zsh-nvm
+mroth/evalcache

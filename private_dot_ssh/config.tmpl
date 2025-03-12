@@ -44,8 +44,8 @@ Host gitlab.sat.engineering.redhat.com gitlab.cee.redhat.com
     IdentityFile ~/.ssh/gerrit_rsa
     PreferredAuthentications publickey
 
-Host gitlab.com
-    Hostname gitlab.com
+Host gitlab.com gitlab.fi.muni.cz
+    Hostname %h
     IdentityFile ~/.ssh/gitlab_ed25519
     PreferredAuthentications publickey
 

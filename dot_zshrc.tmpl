@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 # VARIABLES
 zsh_folder="$HOME/.zsh"
 
@@ -85,16 +86,12 @@ zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl
 zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' fzf-preview 'echo ${(P)word}'
 
 
-# PROMT THEME
-eval "$(starship init zsh)"
-
 # Mac GPG tty (https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e)
 export GPG_TTY=$(tty)
 
 # Bundles
 # Before sourcing
-plugins=(fzf nvm command-not-found sudo man colored-man-pages colorize dirhistory copybuffer magic-enter cp dotenv pipenv)
-zstyle ':omz:plugins:nvm' autoload true
+plugins=(fzf command-not-found sudo man colored-man-pages colorize dirhistory copybuffer magic-enter cp dotenv pipenv)
 
 source $zsh_folder/bundle.sh
 
@@ -108,6 +105,9 @@ MAGIC_ENTER_GIT_COMMAND='g s'
 MAGIC_ENTER_OTHER_COMMAND='ll .'
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ ll g oc"
 
+# PROMT THEME
+_evalcache starship init zsh
+
 # Set up Ruby
 # eval "$(command rbenv init -)"
 # export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
@@ -115,24 +115,18 @@ export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ ll g oc"
 # Set NPM global dir
 export PATH="$HOME/.npm-global/bin:$PATH"
 
+# Set up NVM lazy loading
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+
+
 # Set up Python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$HOME/.local/bin:$PATH"
-_pipenv() {
-  eval $(env COMMANDLINE="${words[1,$CURRENT]}" _PIPENV_COMPLETE=complete-zsh  pipenv)
-}
-_pip_completion() {
-  local words cword
-  read -Ac words
-  read -cn cword
-  reply=( $( COMP_WORDS="$words[*]" \
-             COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] ) )
-}
 if [ $commands[pyenv] ]; then
   pyenv() {
     unfunction "$0"
-    eval "$(pyenv init -)"
+    _evalcache pyenv init -
     $0 "$@"
   }
 fi
@@ -230,6 +224,7 @@ alias c="code ."
 alias v="code ."
 alias p="pushd ..;popd"
 alias gh="PAGER=cat gh"
+alias cdtemp="cd \`mktemp -d\`"
 
 # FUNCTIONS
 
