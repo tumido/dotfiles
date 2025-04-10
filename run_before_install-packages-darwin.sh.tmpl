@@ -1,7 +1,7 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "norwoodj/tap"
@@ -105,6 +105,7 @@ cask "notunes"
 cask "zen-browser"
 cask "whatsapp"
 cask "android-platform-tools"
+cask "elgato-stream-deck"
 EOF
 
 brew reinstall openshift-client --no-quarantine

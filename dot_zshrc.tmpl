@@ -141,6 +141,9 @@ export PATH="${GOPATH//://bin:}/bin:$PATH"
 export FVM_HOME="~/.fvm"
 export PATH="~/.fvm/default/bin:$PATH"
 
+# Set up Rust
+export PATH="~/.cargo/bin:$PATH"
+
 {{ if eq .chezmoi.os "linux" -}}
 # Set Chromium for Flutter
 export CHROME_EXECUTABLE=chromium
