@@ -211,6 +211,11 @@ alias watch="watch -d -c"
 alias i="lximage-qt"
 alias mplayer=mpv
 alias g=git
+alias k=kubectl
+alias kg="kubectl get"
+alias kgy="kubectl get -o yaml"
+alias kd="kubectl delete"
+alias kl="kubectl logs"
 alias ocu="oc config use-context"
 alias occl="oc config set-cluster"
 alias ocr="oc config set-credentials"
@@ -221,7 +226,6 @@ alias ocs="oc status"
 alias ocdel="oc delete"
 alias ocl="oc logs"
 alias occo="chromium \`oc whoami --show-console\`"
-alias t="PIPENV_DONT_LOAD_ENV=1 pipenv run pytest --pylama ."
 alias dotenv="set -a; source ./.env; set +a;"
 alias c="code ."
 alias v="code ."
@@ -392,3 +396,12 @@ function pvc-debug {
     oc exec -it pvc-debug-tumido -- /bin/bash
     oc delete pod pvc-debug-tumido
 }
+
+function kl-dl {
+    echo $1 | sed 's/\scf\/hls/\pd/' | xargs -L 1 curl -o "$2.mp4" -L
+}
+
+# Setup Claude
+export CLAUDE_CODE_USE_VERTEX=1
+export CLOUD_ML_REGION=us-east5
+export ANTHROPIC_VERTEX_PROJECT_ID=${CLOUD_ML_PROJECT_NAME}

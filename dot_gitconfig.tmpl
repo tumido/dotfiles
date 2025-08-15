@@ -34,6 +34,7 @@
 
 [pager]
   branch = false
+  tag = false
 
 [diff "nbdiff"]
   command = git-nbdiffdriver webdiff
@@ -50,7 +51,7 @@
   coc = checkout .
   cob = checkout -b
   cobf = "!f() { git brd $1; git cob $1; }; f"
-  col = checkout HEAD~1
+  col = checkout -
   com = "!f() { git checkout $(git default-branch); }; f"
 
   c = commit -s -m
@@ -70,7 +71,7 @@
   undo = reset HEAD^1
   unstage = resa
 
-  tags = tag -l
+  tags = "!f() { echo "Local tags:"; git tag -l; echo "Upstream tags:"; git ls-remote --tags upstream | cut -f2 | cut -c12-; }; f"
 
   d = diff
   ds = diff --staged
@@ -100,8 +101,8 @@
   a = add -u -v
 
   lg = "log --graph --full-history --all --pretty=format:'%C(#ffaa00)%h%Creset —— %C(magenta)%G? %C(bold blue)%an%Creset: %s %C(green)%ar%Creset %C(red)%d%Creset' --abbrev-commit --date=relative"
-  cleanup = "!f() { git-delete-merged-branches \"$@\"; }; f"
-  update = "!git fum && HUSKY=0 git com && git rb upstream/$(git default-branch) && git p"
+  cleanup = "!f() { git branch --merged | grep -v \"^\\*\\\\|main\" | xargs -r -I % sh -c \"git branch -d %; git push origin --delete %\"; }; f"
+  update = "!git fum && HUSKY=0 git com && git rb upstream/$(git default-branch) && git p && git col && git rbm"
 
   # cotc = !git sttc | xargs git checkout
   # como = !git stmo | xargs git checkout
