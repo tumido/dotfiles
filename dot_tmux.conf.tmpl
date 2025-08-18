@@ -18,8 +18,14 @@ bind -n M-Right select-pane -R
 bind -n M-Up select-pane -U
 bind -n M-Down select-pane -D
 
+# Remap CTRL-D to detach instead of shell exit
+bind-key -n C-d detach
+
 # Enable mouse control (clickable windows, panes, resizable panes)
 set -g mouse on
+
+# Update interval
+set -g status-interval 5
 
 # Plugins
 set -g @plugin 'tmux-plugins/tpm'
@@ -28,11 +34,10 @@ set -g @plugin 'niksingh710/minimal-tmux-status'
 
 # Status bar
 bind-key b set-option status
-set -g @minimal-tmux-fg "#000000"
-set -g @minimal-tmux-bg "#f2ad3c"
+set -g @minimal-tmux-fg "black"
+set -g @minimal-tmux-bg "yellow"
 set -g @minimal-tmux-justify "centre"
-set -g @minimal-tmux-indicator-str "tmux"
-set -g @minimal-tmux-indicator true
+set -g @minimal-tmux-indicator false
 set -g @minimal-tmux-status "bottom"
 
 # Enables or disables the left and right status bar
@@ -56,14 +61,20 @@ set -g @minimal-tmux-use-arrow true
 set -g @minimal-tmux-right-arrow ""
 set -g @minimal-tmux-left-arrow ""
 
-# Not recommended to change these values
+# Status content
 set -g @minimal-tmux-status-right "#S "
-set -g @minimal-tmux-status-left "${default_color}#{?client_prefix,,${indicator}}#[bg=${bg},fg=${fg},bold]#{?client_prefix,${indicator},}${default_color}"
+set -g @minimal-tmux-status-left "\uea85 tmux"
+set -g @minimal-tmux-window-status-format '#I:#W'
 
 # If getting strings cut in left status or right
 # Here 20 is the length of the characters in the string
 set -g status-right-length 20
 set -g status-left-length 20
+
+# Add empty line around status bar
+set -Fg 'status-format[1]' '#{status-format[0]}'
+set -g 'status-format[0]' ''
+set -g status 2
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 {{ if eq .chezmoi.os "darwin" -}}

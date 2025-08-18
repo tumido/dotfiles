@@ -24,6 +24,8 @@ Host neem
     IdentityFile ~/.ssh/turris_ed25519
     PreferredAuthentications publickey
     RemoteForward /run/user/1000/gnupg/S.gpg-agent /Users/tcoufal/.gnupg/S.gpg-agent.extra
+    RequestTTY yes
+    RemoteCommand tmux -u new -A -s ssh_tmux
 
 Host code.engineering.redhat.com
     User tcoufal
