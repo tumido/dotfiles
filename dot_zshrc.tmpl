@@ -258,17 +258,6 @@ function plasma-restart {
     echo "Done"
 }
 
-# Rsync backup
-function backup {
-    params=""
-    if [ "$1" == "-r" ]; then
-        params="--remove-source-files"
-        shift
-    fi
-
-    rsync -avh --stats --progress --partial $params $@
-}
-
 # Charge Thinkpad to full
 function charge {
     if [ "$1" == "-f" ]; then
