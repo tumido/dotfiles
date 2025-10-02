@@ -17,9 +17,12 @@ Host router cap1 cap2
     IdentityFile ~/.ssh/mikrotik_rsa
     PreferredAuthentications publickey
 
+Match host neem exec "tailscale status"
+    HostName neem
+Match host neem
+    HostName neem.lan
 Host neem
     User tumi
-    Hostname neem.lan
     ForwardAgent yes
     IdentityFile ~/.ssh/turris_ed25519
     PreferredAuthentications publickey
@@ -31,6 +34,8 @@ Host code.engineering.redhat.com
     User tcoufal
     IdentityFile ~/.ssh/gerrit_rsa
     PreferredAuthentications publickey
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
 
 Host moth
     User pi
@@ -45,6 +50,8 @@ Host gist.github.com github.com
 Host gitlab.sat.engineering.redhat.com gitlab.cee.redhat.com
     IdentityFile ~/.ssh/gerrit_rsa
     PreferredAuthentications publickey
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
 
 Host gitlab.com gitlab.fi.muni.cz
     Hostname %h
@@ -60,3 +67,9 @@ Host bastion
     User tcoufal
     Hostname b7.bast-001.prod.iad2.dc.redhat.com
     IdentityFile ~/.ssh/rover_ed25519
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+
+Host *.redhat.com
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
