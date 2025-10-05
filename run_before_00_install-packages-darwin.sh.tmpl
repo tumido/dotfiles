@@ -2,17 +2,15 @@
 #!/bin/bash
 
 brew bundle --file=/dev/stdin <<EOF
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "norwoodj/tap"
-tap "homebrew/cask-drivers"
 tap "helm/tap"
 tap "mszostok/tap"
 tap "leoafarias/fvm"
 tap "grishka/grishka"
 tap "saulpw/vd"
+
 brew "coreutils"
-brew "antibody"
+brew "antidote"
 brew "chezmoi"
 brew "fzf"
 brew "gh"
@@ -67,6 +65,7 @@ brew "ffmpeg"
 brew "wireguard-tools"
 brew "scrcpy"
 brew "exiftool"
+
 cask "vlc"
 cask "transmit"
 cask "discord"
@@ -78,7 +77,7 @@ cask "kap"
 cask "middleclick", args: { no_quarantine: true }
 cask "maccy"
 cask "onyx"
-cask "openshift-client", args: { no_quarantine: true }
+# cask "openshift-client", args: { no_quarantine: true }
 cask "rectangle"
 cask "spotify"
 cask "swift-quit"
@@ -90,8 +89,8 @@ cask "input-source-pro"
 cask "eqmac"
 cask "balenaetcher"
 cask "shortcat"
-cask "google-cloud-sdk"
-cask "logi-options-plus"
+cask "gcloud-cli"
+cask "logi-options+"
 cask "raycast"
 cask "neardrop", args: { no_quarantine: true }
 cask "basictex"
@@ -99,11 +98,11 @@ cask "monitorcontrol"
 cask "signal"
 cask "messenger"
 cask "notunes"
-cask "zen-browser"
+cask "zen"
 cask "whatsapp"
 cask "android-platform-tools"
 cask "elgato-stream-deck"
 EOF
 
-brew reinstall openshift-client --no-quarantine
+# brew reinstall openshift-client --no-quarantine
 {{ end -}}

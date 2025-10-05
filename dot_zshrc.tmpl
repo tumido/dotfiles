@@ -89,23 +89,21 @@ zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|
 # Mac GPG tty (https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e)
 export GPG_TTY=$(tty)
 
-# Bundles
-# Before sourcing
-plugins=(fzf command-not-found sudo man colored-man-pages colorize dirhistory copybuffer magic-enter cp dotenv pipenv)
 
-source $zsh_folder/bundle.sh
-
-# After sourcing
-ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
-DISABLE_AUTO_UPDATE=true
-DISABLE_UPDATE_PROMPT=true
 ZSH_COMPDUMP=$HOME/.zcompdump
 ZSH_COLORIZE_STYLE=monokai
 MAGIC_ENTER_GIT_COMMAND='g s'
 MAGIC_ENTER_OTHER_COMMAND='ll .'
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ ll g oc"
 
-# PROMT THEME
+# Load plugins
+function is-macos() {
+  [[ $OSTYPE == darwin* ]]
+}
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
+
+# Prompt theme
 _evalcache starship init zsh
 
 # Set up Ruby
@@ -315,22 +313,13 @@ function toggle_trackpoint {
 }
 
 function src {
-    antibody update
-    antibody bundle < $zsh_folder/bundle.txt > $zsh_folder/bundle.sh
-
-    autoload -U compinit zrecompile
-    compinit -i -d $ZSH_COMPDUMP
-
-    for f in ~/.zshrc $ZSH_COMPDUMP; do
-        zrecompile -p $f && command rm -f $f.zwc.old
-    done
+    antidote load
 
     kubectl completion zsh > $zsh_folder/zfunc/_kubectl
-    oc completion zsh > $zsh_folder/zfunc/_oc
-    
+    # oc completion zsh > $zsh_folder/zfunc/_oc
+
     # Use $SHELL if available; remove leading dash if login shell
     [[ -n "$SHELL" ]] && exec ${SHELL#-} || exec zsh
-
 }
 
 function magnet {
