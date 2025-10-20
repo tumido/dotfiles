@@ -1,13 +1,19 @@
 {{ $email := promptString "email" -}}
 {{ $keyid := "11744BE7B97A9C31" -}}
+{{ $isManaged := promptBool "Is this a managed device?" false -}}
 
 data:
   email: "{{ $email }}"
   name: "Tomas Coufal"
   keyid: "{{ $keyid }}"
+  isManaged: {{ $isManaged }}
 
 encryption: "gpg"
 gpg:
   recipient: "{{ $keyid }}"
   args:
   - "--quiet"
+
+edit:
+  watch: true
+  apply: true

@@ -108,7 +108,14 @@ cask "tailscale-app"
 cask "iina"
 cask "insta360-studio"
 cask "blisk"
+cask "podman-desktop"
+{{ if not .isManaged -}}
+cask "google-chrome"
+cask "slack"
+{{ end -}}
 EOF
 
 # brew reinstall openshift-client --no-quarantine
+# brew reinstall flameshot --no-quarantine
+# brew reinstall hiddenbar --no-quarantine
 {{ end -}}
