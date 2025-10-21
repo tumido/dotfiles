@@ -85,6 +85,12 @@ zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl
 # env variables
 zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' fzf-preview 'echo ${(P)word}'
 
+# eza omz plugin config
+zstyle ':omz:plugins:eza' 'dirs-first' yes
+zstyle ':omz:plugins:eza' 'git-status' yes
+zstyle ':omz:plugins:eza' 'header' yes
+zstyle ':omz:plugins:eza' 'icons' yes
+
 
 # Mac GPG tty (https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e)
 export GPG_TTY=$(tty)
@@ -95,7 +101,6 @@ ZSH_COLORIZE_STYLE=monokai
 MAGIC_ENTER_GIT_COMMAND='g s'
 MAGIC_ENTER_OTHER_COMMAND='ll .'
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ ll g oc"
-GLOBALIAS_FILTER_VALUES=(l cat grep la ll ls g)
 
 # Load plugins
 function is-macos() {
