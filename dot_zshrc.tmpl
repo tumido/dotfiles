@@ -199,10 +199,9 @@ compdef g='git'
 complete -C '~/.local/bin/aws_completer' aws
 
 # KEYBINDINGS
-bindkey "^[[3;5~"          kill-word
-bindkey "\b"               backward-kill-word
-bindkey "$terminfo[kich1]" overwrite-mode
-bindkey '^[[Z'             autosuggest-accept
+bindkey "\ef" forward-word
+bindkey "\eb" backward-word
+bindkey "\e[Z" autosuggest-accept
 
 # ALIASES
 # The Fuck
