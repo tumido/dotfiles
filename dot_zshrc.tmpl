@@ -106,7 +106,11 @@ export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ ll g oc"
 function is-macos() {
   [[ $OSTYPE == darwin* ]]
 }
+{{ if eq .chezmoi.os "linux" -}}
+source /usr/share/zsh-antidote/antidote.zsh
+{{ else -}}
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+{{ end -}}
 antidote load
 
 # Prompt theme
