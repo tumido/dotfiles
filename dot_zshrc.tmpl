@@ -62,13 +62,13 @@ zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # switch group using `,` and `.`
-zstyle ':fzf-tab:*' switch-group left right 
+zstyle ':fzf-tab:*' switch-group left right
 
 # preview style
-FZF_DEFAULT_OPTS='--reverse --border=horizontal --prompt=" " --pointer="•" --marker="❌" --height=100%'
+FZF_DEFAULT_OPTS='--reverse --prompt=" " --pointer="•" --marker="❌" --height=100% --separator=""'
 FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS --preview 'less {}' --preview-window right,50%,border-left"
 export BAT_STYLE="numbers"
-zstyle ':fzf-tab:*' fzf-flags --reverse --border=horizontal --prompt=" "  --pointer="•" --marker="❌" --preview-window right,50%,border-left --height=100%
+zstyle ':fzf-tab:*' fzf-flags --reverse --prompt=" "  --pointer="•" --marker="❌" --preview-window right,50%,border-left --height=100% --separator=""
 
 # give a preview of commandline arguments when completing `kill`
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
@@ -396,3 +396,6 @@ function kl-dl {
 export CLAUDE_CODE_USE_VERTEX=1
 export CLOUD_ML_REGION=us-east5
 export ANTHROPIC_VERTEX_PROJECT_ID=${CLOUD_ML_PROJECT_NAME}
+
+# Set up Try
+export TRY_BASE_DIR=~/Programming/tries
