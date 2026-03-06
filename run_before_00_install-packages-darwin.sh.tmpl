@@ -94,7 +94,6 @@ cask "neardrop", args: { no_quarantine: true }
 cask "basictex"
 cask "monitorcontrol"
 cask "signal"
-cask "messenger"
 cask "notunes"
 cask "zen"
 cask "whatsapp"
@@ -105,14 +104,15 @@ cask "iina"
 cask "insta360-studio"
 cask "blisk"
 cask "podman-desktop"
+
 {{ if not .isManaged -}}
+brew "yt-dlp"
+
 cask "google-chrome"
 cask "slack"
 cask "autodesk-fusion"
 cask "canva"
-cask "affinity-designer"
-cask "affinity-photo"
-cask "affinity-publisher"
+cask "affinity"
 cask "steam"
 {{ end -}}
 EOF
